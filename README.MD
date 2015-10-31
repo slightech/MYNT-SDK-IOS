@@ -1,7 +1,7 @@
 ###1. 在Podfile中添加
 
 ```
-pod 'MyntCoreBluetooth', :git=>"https://github.com/gejw0623/MyntCoreBluetoothSDK.git"
+pod 'MyntCoreBluetooth', :git=>"https://github.com/slightech/MyntCoreBluetoothSDK.git"
 ```
 
 ###2. 导入头文件
