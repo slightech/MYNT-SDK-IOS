@@ -18,6 +18,7 @@ typedef STPeripheralEventType STMyntEventType;
 #pragma STMyntCentralDelegate
 
 @protocol STMyntCentralDelegate <NSObject>
+@optional
 
 /**
  *  @author Robin, 15-10-27 16:10:07
@@ -39,36 +40,32 @@ typedef STPeripheralEventType STMyntEventType;
  */
 - (void)central:(STMyntCentralManager*)central didDisfoundMynt:(STMynt *)mynt;
 
-#if TARGET_OS_IOS
+/**
+ *  @author Robin, 15-12-01 15:12:53
+ *
+ *  状态恢复的设备
+ *
+ *  @param central <#central description#>
+ *  @param mynt    <#mynt description#>
+ */
+- (void)central:(STMyntCentralManager *)central didRestoreMynt:(STMynt *)mynt;
 
 /**
- *  @author Robin, 15-10-31 18:10:46
+ *  @author Robin, 15-12-01 15:12:17
  *
- *  即将恢复的设备(程序被杀掉之后   会自动恢复设备, 请在这个时候设置相应的delegate  接收回调信息)
- *  只针对于 ios
+ *  准备重连的设备
  *
- *  @param central 中心
- *  @param mynt    周边
+ *  @param central
+ *  @param mynt
  */
-- (void)central:(STMyntCentralManager*)central willRestoreMynt:(STMynt *)mynt;
-
-#endif
+- (void)central:(STMyntCentralManager*)central willReconnectMynt:(STMynt *)mynt;
 
 @end
 
 #pragma STMyntDelegate
 
 @protocol STMyntDelegate <NSObject>
-
-/**
- *  @author Robin, 15-10-29 21:10:26
- *
- *  开始连接
- *
- *  @param mynt
- *  @param error
- */
-- (void)mynt:(STMynt *)mynt didStartConnect:(NSError *)error;
+@optional
 
 /**
  *  @author Robin, 15-10-29 21:10:34
@@ -100,42 +97,14 @@ typedef STPeripheralEventType STMyntEventType;
 - (void)mynt:(STMynt *)mynt didDisconnect:(NSError *)error;
 
 /**
- *  @author Robin, 15-10-29 21:10:54
+ *  @author Robin, 15-12-05 14:12:52
  *
- *  开始绑定
- *
- *  @param mynt
- */
-- (void)myntDidStartBind:(STMynt *)mynt;
-
-/**
- *  @author Robin, 15-10-29 21:10:59
- *
- *  绑定成功
+ *  是否开始绑定
  *
  *  @param mynt
+ *  @param HID
  */
-- (void)myntDidBindSuccess:(STMynt *)mynt;
-
-/**
- *  @author Robin, 15-10-29 21:10:06
- *
- *  绑定失败
- *
- *  @param mynt
- *  @param error
- */
-- (void)mynt:(STMynt *)mynt didBindFailed:(NSError *)error;
-
-/**
- *  @author Robin, 15-10-29 21:10:18
- *
- *  接收密码
- *
- *  @param mynt
- *  @param password
- */
-- (void)mynt:(STMynt *)mynt didReceivePassword:(NSString *)password;
+- (void)mynt:(STMynt *)mynt willStartBind:(BOOL)HID;
 
 /**
  *  @author Robin, 15-10-29 21:10:28
@@ -199,29 +168,69 @@ typedef STPeripheralEventType STMyntEventType;
  */
 - (void)mynt:(STMynt *)mynt didAlarmState:(BOOL)alarm;
 
+/**
+ *  @author Robin, 15-12-02 20:12:28
+ *
+ *  hid模式
+ *
+ *  @param mynt
+ *  @param mode 
+ */
+- (void)mynt:(STMynt *)mynt didReadHIDMode:(STPeripheralHIDMode)mode;
+
 @end
 
 #pragma STMyntDataSource
 
-@protocol STMyntDataSource <NSObject>
+@protocol STMyntBindDelegate <NSObject>
+@optional
 
 /**
- *  @author Robin, 15-10-29 16:10:55
+ *  @author Robin, 15-12-01 17:12:14
  *
- *  请求秘钥
+ *  开始绑定
  *
- *  @param mynt
- *  @param msg (暂时没啥效果  用于sdk向上层提示信息)
- *
- *  @return
+ *  @param peripheral 周边
  */
-- (NSString *)mynt:(STMynt *)mynt didRequestPassword:(NSString *)msg;
+- (void)didStartBind:(STMynt *)mynt;
+
+/**
+ *  @author Robin, 15-12-01 17:12:02
+ *
+ *  向上层请求秘钥
+ *
+ *  @param peripheral
+ *
+ *  @return 秘钥(如果为nil，则为请求秘钥)
+ */
+- (NSString *)didRequestPassword:(STMynt *)mynt;
+
+/**
+ *  @author Robin, 15-10-27 14:10:37
+ *
+ *  绑定结果
+ *
+ *  @param peripheral 周边
+ *  @param error      错误信息(成功时为nil)
+ */
+- (void)mynt:(STMynt *)mynt didBindResult:(NSError *)error;
+
+/**
+ *  @author Robin, 15-10-27 14:10:10
+ *
+ *  收到密钥
+ *
+ *  @param peripheral 周边
+ *  @param password   密码
+ */
+- (void)mynt:(STMynt *)mynt didReceivePassword:(NSString *)password;
 
 @end
 
 #pragma STMyntDataSource
 
 @protocol STMyntOADDelegate <NSObject>
+@optional
 
 /**
  *  @author Robin, 15-10-29 16:10:02

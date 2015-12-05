@@ -14,23 +14,31 @@
 + (instancetype)sharedInstance;
 
 /**
- *  @author Robin, 15-10-31 19:10:27
+ *  @author Robin, 15-12-03 18:12:59
  *
- *  初始化sdk
+ *  <#Description#>
  *
- *  @param delegate       回调接口
+ *  @param delegate
+ *  @param restoreIdentifier 状态恢复标示
  */
-- (void)installWithDelegate:(id<STMyntCentralDelegate>)delegate;
-
+- (void)installWithDelegate:(id<STMyntCentralDelegate>)delegate restoreIdentifier:(NSString *)restoreIdentifier;
 
 /**
- *  @author Robin, 15-10-31 19:10:27
+ *  @author Robin, 15-12-03 18:12:18
  *
- *  初始化sdk
+ *  <#Description#>
  *
- *  @param delegate       回调接口
- *  @param needReportLost 是否需要
+ *  @param delegate
+ *  @param restoreIdentifier 状态恢复标示
+ *  @param needReportLost    是否需要帮助社区寻找
  */
-- (void)installWithDelegate:(id<STMyntCentralDelegate>)delegate needReportLost:(BOOL)needReportLost;
+- (void)installWithDelegate:(id<STMyntCentralDelegate>)delegate restoreIdentifier:(NSString *)restoreIdentifier needReportLost:(BOOL)needReportLost;
+
+/**
+ *  @author Robin, 15-12-03 19:12:03
+ *
+ *  清空保存的小觅(清空后不会自动重连)
+ */
+- (void)cleanStoredMynts;
 
 @end
