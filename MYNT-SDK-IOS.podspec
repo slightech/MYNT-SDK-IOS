@@ -15,11 +15,11 @@ Pod::Spec.new do |s|
   s.preserve_path = 'MYNT-SDK-IOS/libSTMyntBluetooth.a'
 
   
-  s.vendored_libraries = 'libSTMyntBluetooth.a'
+  s.vendored_libraries = 'MYNT-SDK-IOS/libSTMyntBluetooth.a'
   s.library = 'sqlite3'
   s.ios.frameworks = 'CoreBluetooth'
   s.osx.frameworks = 'IOBluetooth'
 
-  s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/MYNT-SDK-IOS/**"' }
+  s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/MYNT-SDK-IOS/MYNT-SDK-IOS/**"' }
 
 end
