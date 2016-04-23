@@ -1,3 +1,8 @@
+
+## [中文文档](README/readme_cn.md)
+
+===
+
 ###1. 在Podfile中添加
 
 ```
