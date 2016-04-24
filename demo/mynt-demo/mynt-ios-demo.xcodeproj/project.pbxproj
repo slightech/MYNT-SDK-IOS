@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A98E914C1CCC594200670FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E914B1CCC594200670FBA /* AppDelegate.swift */; };
+		A98E914E1CCC594200670FBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E914D1CCC594200670FBA /* ViewController.swift */; };
+		A98E91511CCC594200670FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98E914F1CCC594200670FBA /* Main.storyboard */; };
+		A98E91531CCC594200670FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E91521CCC594200670FBA /* Assets.xcassets */; };
+		A98E91561CCC594200670FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98E91541CCC594200670FBA /* LaunchScreen.storyboard */; };
+		A98E91641CCC595500670FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E91631CCC595500670FBA /* AppDelegate.swift */; };
+		A98E91661CCC595500670FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E91651CCC595500670FBA /* Assets.xcassets */; };
+		A98E91691CCC595500670FBA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E91671CCC595500670FBA /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A98E91481CCC594200670FBA /* mynt-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mynt-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98E914B1CCC594200670FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A98E914D1CCC594200670FBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A98E91501CCC594200670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A98E91521CCC594200670FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A98E91551CCC594200670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A98E91571CCC594200670FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A98E91611CCC595500670FBA /* mynt-osx-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mynt-osx-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98E91631CCC595500670FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A98E91651CCC595500670FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A98E91681CCC595500670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A98E916A1CCC595500670FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A98E91451CCC594200670FBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A98E915E1CCC595500670FBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A98E913F1CCC594200670FBA = {
+			isa = PBXGroup;
+			children = (
+				A98E914A1CCC594200670FBA /* mynt-ios-demo */,
+				A98E91621CCC595500670FBA /* mynt-osx-demo */,
+				A98E91491CCC594200670FBA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A98E91491CCC594200670FBA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A98E91481CCC594200670FBA /* mynt-ios-demo.app */,
+				A98E91611CCC595500670FBA /* mynt-osx-demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A98E914A1CCC594200670FBA /* mynt-ios-demo */ = {
+			isa = PBXGroup;
+			children = (
+				A98E914B1CCC594200670FBA /* AppDelegate.swift */,
+				A98E914D1CCC594200670FBA /* ViewController.swift */,
+				A98E914F1CCC594200670FBA /* Main.storyboard */,
+				A98E91521CCC594200670FBA /* Assets.xcassets */,
+				A98E91541CCC594200670FBA /* LaunchScreen.storyboard */,
+				A98E91571CCC594200670FBA /* Info.plist */,
+			);
+			path = "mynt-ios-demo";
+			sourceTree = "<group>";
+		};
+		A98E91621CCC595500670FBA /* mynt-osx-demo */ = {
+			isa = PBXGroup;
+			children = (
+				A98E91631CCC595500670FBA /* AppDelegate.swift */,
+				A98E91651CCC595500670FBA /* Assets.xcassets */,
+				A98E91671CCC595500670FBA /* MainMenu.xib */,
+				A98E916A1CCC595500670FBA /* Info.plist */,
+			);
+			path = "mynt-osx-demo";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A98E91471CCC594200670FBA /* mynt-ios-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A98E915A1CCC594200670FBA /* Build configuration list for PBXNativeTarget "mynt-ios-demo" */;
+			buildPhases = (
+				A98E91441CCC594200670FBA /* Sources */,
+				A98E91451CCC594200670FBA /* Frameworks */,
+				A98E91461CCC594200670FBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mynt-ios-demo";
+			productName = "mynt-ios-demo";
+			productReference = A98E91481CCC594200670FBA /* mynt-ios-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A98E91601CCC595500670FBA /* mynt-osx-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A98E916D1CCC595500670FBA /* Build configuration list for PBXNativeTarget "mynt-osx-demo" */;
+			buildPhases = (
+				A98E915D1CCC595500670FBA /* Sources */,
+				A98E915E1CCC595500670FBA /* Frameworks */,
+				A98E915F1CCC595500670FBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mynt-osx-demo";
+			productName = "mynt-osx-demo";
+			productReference = A98E91611CCC595500670FBA /* mynt-osx-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A98E91401CCC594200670FBA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = slighech;
+				TargetAttributes = {
+					A98E91471CCC594200670FBA = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					A98E91601CCC595500670FBA = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = A98E91431CCC594200670FBA /* Build configuration list for PBXProject "mynt-ios-demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A98E913F1CCC594200670FBA;
+			productRefGroup = A98E91491CCC594200670FBA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A98E91471CCC594200670FBA /* mynt-ios-demo */,
+				A98E91601CCC595500670FBA /* mynt-osx-demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A98E91461CCC594200670FBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98E91561CCC594200670FBA /* LaunchScreen.storyboard in Resources */,
+				A98E91531CCC594200670FBA /* Assets.xcassets in Resources */,
+				A98E91511CCC594200670FBA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A98E915F1CCC595500670FBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98E91661CCC595500670FBA /* Assets.xcassets in Resources */,
+				A98E91691CCC595500670FBA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A98E91441CCC594200670FBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98E914E1CCC594200670FBA /* ViewController.swift in Sources */,
+				A98E914C1CCC594200670FBA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A98E915D1CCC595500670FBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98E91641CCC595500670FBA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A98E914F1CCC594200670FBA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A98E91501CCC594200670FBA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A98E91541CCC594200670FBA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A98E91551CCC594200670FBA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A98E91671CCC595500670FBA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A98E91681CCC595500670FBA /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A98E91581CCC594200670FBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A98E91591CCC594200670FBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A98E915B1CCC594200670FBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "mynt-ios-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-ios-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A98E915C1CCC594200670FBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "mynt-ios-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-ios-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A98E916B1CCC595500670FBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mynt-osx-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-osx-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A98E916C1CCC595500670FBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "mynt-osx-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-osx-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A98E91431CCC594200670FBA /* Build configuration list for PBXProject "mynt-ios-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A98E91581CCC594200670FBA /* Debug */,
+				A98E91591CCC594200670FBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A98E915A1CCC594200670FBA /* Build configuration list for PBXNativeTarget "mynt-ios-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A98E915B1CCC594200670FBA /* Debug */,
+				A98E915C1CCC594200670FBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A98E916D1CCC595500670FBA /* Build configuration list for PBXNativeTarget "mynt-osx-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A98E916B1CCC595500670FBA /* Debug */,
+				A98E916C1CCC595500670FBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A98E91401CCC594200670FBA /* Project object */;
+}
