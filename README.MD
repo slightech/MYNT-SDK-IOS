@@ -1,7 +1,17 @@
+## MTNT SDK
+
+[![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+[![Support](https://img.shields.io/badge/support-osx%2010.9%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
 ## [中文文档](README/readme_cn.md)
 
-===
+Installation
+	
+
+Add **pod 'MYNT-SDK-IOS', :git=>"https://github.com/slightech/MYNT-SDK-IOS.git"** to your Podfile
+	2. Run 
+	3. Import <>
+
 
 ###1. 在Podfile中添加
 

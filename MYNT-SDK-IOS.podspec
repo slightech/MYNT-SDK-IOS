@@ -4,18 +4,23 @@ Pod::Spec.new do |s|
   s.version      = "1.0.0"
   s.summary      = "Slightech's Mynt BLE SDK for iOS & OSX"
   s.homepage     = 'https://github.com/slightech/MYNT-SDK-IOS'
-  s.author       = { 'robinge' => 'robinge@slightech.com' }
+  s.author       = { 'slightech' => 'robinge@slightech.com' }
+  s.license      = { :type => 'Copyright', :text => 'LICENSE Copyright 2014 - 2016 Slightech.com, Inc. All rights reserved.' }
 
+  s.platform = :ios
+  s.platform = :osx
   s.ios.deployment_target = '7.0'
   s.osx.deployment_target = '10.9'
-  s.source       = { :git => 'https://github.com/slightech/MYNT-SDK-IOS.git' }
+  s.source       = { :git => 'https://github.com/slightech/MYNT-SDK-IOS.git', :tag => "1.0.0"}
   s.requires_arc = true
 
   s.source_files = 'MYNT-SDK-IOS/*.h'
-  s.preserve_path = 'MYNT-SDK-IOS/libSTMyntBluetooth.a'
+  s.ios.preserve_path = 'MYNT-SDK-IOS/ios/libSTMyntBluetooth.a'
+  s.osx.preserve_path = 'MYNT-SDK-IOS/osx/libSTMyntBluetooth.a'
 
   
-  s.vendored_libraries = 'MYNT-SDK-IOS/libSTMyntBluetooth.a'
+  s.ios.vendored_libraries = 'MYNT-SDK-IOS/ios/libSTMyntBluetooth.a'
+  s.osx.vendored_libraries = 'MYNT-SDK-IOS/osx/libSTMyntBluetooth.a'
   s.library = 'sqlite3'
   s.ios.frameworks = 'CoreBluetooth'
   s.osx.frameworks = 'IOBluetooth'
