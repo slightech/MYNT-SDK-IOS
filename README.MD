@@ -36,14 +36,14 @@
 
 	> osx
 	
-	* CoreBluetooth
+	* IOBluetooth
 	* sqlite3
 4. import `STMyntBluetooth.h`.
 
 ## Requirements
 This library requires `iOS 7.0+` and `OSX 10.9+`.
 
-###[Documentation](documentation/readme_en.md)
+###[Documentation](doc/readme_en.md)
 
 <br/><br/>
 
@@ -71,11 +71,11 @@ This library requires `iOS 7.0+` and `OSX 10.9+`.
 
 	> osx
 	
-	* CoreBluetooth
+	* IOBluetooth
 	* sqlite3
 4. 导入 `STMyntBluetooth.h`.
 
 ## 系统要求
 该项目最低支持 `iOS 7.0` 和 `OSX 10.9`。
 
-###[文档](documentation/readme_cn.md)
+###[文档](doc/readme_cn.md)
