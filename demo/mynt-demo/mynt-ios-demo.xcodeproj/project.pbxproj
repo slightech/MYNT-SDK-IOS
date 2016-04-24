@@ -15,9 +15,13 @@
 		A98E91641CCC595500670FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E91631CCC595500670FBA /* AppDelegate.swift */; };
 		A98E91661CCC595500670FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E91651CCC595500670FBA /* Assets.xcassets */; };
 		A98E91691CCC595500670FBA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E91671CCC595500670FBA /* MainMenu.xib */; };
+		B031252BCD65D9E53AFA279E /* libPods-mynt-osx-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE784E6D0EE4D8D736596208 /* libPods-mynt-osx-demo.a */; };
+		DCB8D79A6958EEE9F126E53D /* libPods-mynt-ios-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BF5B52873C2BD9B59FFDA0 /* libPods-mynt-ios-demo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0171699DEC4F5880EFA32E /* Pods-mynt-osx-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-osx-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		70BF5B52873C2BD9B59FFDA0 /* libPods-mynt-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E91481CCC594200670FBA /* mynt-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mynt-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E914B1CCC594200670FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A98E914D1CCC594200670FBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +34,10 @@
 		A98E91651CCC595500670FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A98E91681CCC595500670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A98E916A1CCC595500670FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B33535F52B695B5B080AA16D /* Pods-mynt-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-ios-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		E0B5D630535B252B987C342B /* Pods-mynt-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-ios-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
+		F853637C6EAC9B5EA1380984 /* Pods-mynt-osx-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-osx-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo.release.xcconfig"; sourceTree = "<group>"; };
+		FE784E6D0EE4D8D736596208 /* libPods-mynt-osx-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-osx-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCB8D79A6958EEE9F126E53D /* libPods-mynt-ios-demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +53,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B031252BCD65D9E53AFA279E /* libPods-mynt-osx-demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20EA70DAA6B178D8E300EDA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B33535F52B695B5B080AA16D /* Pods-mynt-ios-demo.debug.xcconfig */,
+				E0B5D630535B252B987C342B /* Pods-mynt-ios-demo.release.xcconfig */,
+				4B0171699DEC4F5880EFA32E /* Pods-mynt-osx-demo.debug.xcconfig */,
+				F853637C6EAC9B5EA1380984 /* Pods-mynt-osx-demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		684A390CFB8C76728C9527E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70BF5B52873C2BD9B59FFDA0 /* libPods-mynt-ios-demo.a */,
+				FE784E6D0EE4D8D736596208 /* libPods-mynt-osx-demo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A98E913F1CCC594200670FBA = {
 			isa = PBXGroup;
 			children = (
 				A98E914A1CCC594200670FBA /* mynt-ios-demo */,
 				A98E91621CCC595500670FBA /* mynt-osx-demo */,
 				A98E91491CCC594200670FBA /* Products */,
+				20EA70DAA6B178D8E300EDA2 /* Pods */,
+				684A390CFB8C76728C9527E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A98E915A1CCC594200670FBA /* Build configuration list for PBXNativeTarget "mynt-ios-demo" */;
 			buildPhases = (
+				AC26E39892A9CB5AF3F73325 /* 📦 Check Pods Manifest.lock */,
 				A98E91441CCC594200670FBA /* Sources */,
 				A98E91451CCC594200670FBA /* Frameworks */,
 				A98E91461CCC594200670FBA /* Resources */,
+				31EA66761AC6391AA6A02570 /* 📦 Embed Pods Frameworks */,
+				5A44136113BD821922EBB959 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -116,9 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A98E916D1CCC595500670FBA /* Build configuration list for PBXNativeTarget "mynt-osx-demo" */;
 			buildPhases = (
+				CAE73562188C4E10C56C5800 /* 📦 Check Pods Manifest.lock */,
 				A98E915D1CCC595500670FBA /* Sources */,
 				A98E915E1CCC595500670FBA /* Frameworks */,
 				A98E915F1CCC595500670FBA /* Resources */,
+				F6AF830BAABABDA24B46EDC2 /* 📦 Embed Pods Frameworks */,
+				644333F3A1F45DA18F6A4611 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -187,6 +225,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31EA66761AC6391AA6A02570 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A44136113BD821922EBB959 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		644333F3A1F45DA18F6A4611 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC26E39892A9CB5AF3F73325 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CAE73562188C4E10C56C5800 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6AF830BAABABDA24B46EDC2 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A98E91441CCC594200670FBA /* Sources */ = {
@@ -321,6 +452,7 @@
 		};
 		A98E915B1CCC594200670FBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33535F52B695B5B080AA16D /* Pods-mynt-ios-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "mynt-ios-demo/Info.plist";
@@ -332,6 +464,7 @@
 		};
 		A98E915C1CCC594200670FBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0B5D630535B252B987C342B /* Pods-mynt-ios-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "mynt-ios-demo/Info.plist";
@@ -343,6 +476,7 @@
 		};
 		A98E916B1CCC595500670FBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B0171699DEC4F5880EFA32E /* Pods-mynt-osx-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
@@ -358,6 +492,7 @@
 		};
 		A98E916C1CCC595500670FBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F853637C6EAC9B5EA1380984 /* Pods-mynt-osx-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
@@ -399,6 +534,7 @@
 				A98E916C1CCC595500670FBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

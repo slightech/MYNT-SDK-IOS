@@ -11,7 +11,6 @@
 ```
 
 [![CocoaPods](http://img.shields.io/cocoapods/v/MYNT-SDK-IOS.svg?style=flat)](http://cocoapods.org/?q=MYNT-SDK-IOS)&nbsp;
-[![CocoaPods](http://img.shields.io/cocoapods/p/MYNT-SDK-IOS.svg?style=flat)](http://cocoapods.org/?q=MYNT-SDK-IOS)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 [![Support](https://img.shields.io/badge/support-osx%2010.9%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 

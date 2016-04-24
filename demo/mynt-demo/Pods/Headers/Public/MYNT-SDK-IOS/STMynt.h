@@ -1,0 +1,1 @@
+../../../MYNT-SDK-IOS/MYNT-SDK-IOS/STMynt.h
