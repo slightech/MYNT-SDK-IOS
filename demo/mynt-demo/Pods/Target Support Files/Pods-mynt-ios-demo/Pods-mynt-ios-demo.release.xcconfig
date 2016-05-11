@@ -1,6 +1,8 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MYNT-SDK-IOS"
-LIBRARY_SEARCH_PATHS = $(inherited) "$(PODS_ROOT)/MYNT-SDK-IOS/MYNT-SDK-IOS/**" $(inherited) "${PODS_ROOT}/MYNT-SDK-IOS/MYNT-SDK-IOS/ios"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MYNT-SDK-IOS"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"STMyntBluetooth" -l"sqlite3" -framework "CoreBluetooth"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MYNT-SDK-IOS" "${PODS_ROOT}/Headers/Public/UIAlertView-Blocks"
+LIBRARY_SEARCH_PATHS = $(inherited) "$(PODS_ROOT)/MYNT-SDK-IOS/MYNT-SDK-IOS/**" "$PODS_CONFIGURATION_BUILD_DIR/UIAlertView-Blocks" $(inherited) "${PODS_ROOT}/MYNT-SDK-IOS/MYNT-SDK-IOS/ios"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MYNT-SDK-IOS" -isystem "${PODS_ROOT}/Headers/Public/UIAlertView-Blocks"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"STMyntBluetooth" -l"UIAlertView-Blocks" -l"sqlite3" -framework "CoreBluetooth"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods
