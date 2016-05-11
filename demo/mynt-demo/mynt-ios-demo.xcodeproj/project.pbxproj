@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A97DE52A1CE2FA5D0053B200 /* MyntTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DE5281CE2FA5D0053B200 /* MyntTableViewController.swift */; };
+		A97DE52B1CE2FA5D0053B200 /* MyntTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DE5291CE2FA5D0053B200 /* MyntTableViewController.xib */; };
+		A97DE52E1CE2FDD00053B200 /* MyntTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DE52C1CE2FDD00053B200 /* MyntTableViewCell.swift */; };
+		A97DE52F1CE2FDD00053B200 /* MyntTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DE52D1CE2FDD00053B200 /* MyntTableViewCell.xib */; };
 		A98E914C1CCC594200670FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E914B1CCC594200670FBA /* AppDelegate.swift */; };
-		A98E914E1CCC594200670FBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E914D1CCC594200670FBA /* ViewController.swift */; };
-		A98E91511CCC594200670FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98E914F1CCC594200670FBA /* Main.storyboard */; };
 		A98E91531CCC594200670FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E91521CCC594200670FBA /* Assets.xcassets */; };
 		A98E91561CCC594200670FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98E91541CCC594200670FBA /* LaunchScreen.storyboard */; };
 		A98E91641CCC595500670FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E91631CCC595500670FBA /* AppDelegate.swift */; };
@@ -22,10 +24,12 @@
 /* Begin PBXFileReference section */
 		4B0171699DEC4F5880EFA32E /* Pods-mynt-osx-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-osx-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		70BF5B52873C2BD9B59FFDA0 /* libPods-mynt-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A97DE5281CE2FA5D0053B200 /* MyntTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyntTableViewController.swift; sourceTree = "<group>"; };
+		A97DE5291CE2FA5D0053B200 /* MyntTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyntTableViewController.xib; sourceTree = "<group>"; };
+		A97DE52C1CE2FDD00053B200 /* MyntTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyntTableViewCell.swift; sourceTree = "<group>"; };
+		A97DE52D1CE2FDD00053B200 /* MyntTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyntTableViewCell.xib; sourceTree = "<group>"; };
 		A98E91481CCC594200670FBA /* mynt-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mynt-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E914B1CCC594200670FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A98E914D1CCC594200670FBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A98E91501CCC594200670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A98E91521CCC594200670FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A98E91551CCC594200670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A98E91571CCC594200670FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		A98E91651CCC595500670FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A98E91681CCC595500670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A98E916A1CCC595500670FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A98E91871CCDE06000670FBA /* mynt-osx-demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynt-osx-demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A98E918B1CCDE06D00670FBA /* mynt-ios-demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynt-ios-demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B33535F52B695B5B080AA16D /* Pods-mynt-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-ios-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		E0B5D630535B252B987C342B /* Pods-mynt-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-ios-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
 		F853637C6EAC9B5EA1380984 /* Pods-mynt-osx-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-osx-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,11 +110,14 @@
 			isa = PBXGroup;
 			children = (
 				A98E914B1CCC594200670FBA /* AppDelegate.swift */,
-				A98E914D1CCC594200670FBA /* ViewController.swift */,
-				A98E914F1CCC594200670FBA /* Main.storyboard */,
+				A97DE5281CE2FA5D0053B200 /* MyntTableViewController.swift */,
+				A97DE5291CE2FA5D0053B200 /* MyntTableViewController.xib */,
+				A97DE52C1CE2FDD00053B200 /* MyntTableViewCell.swift */,
+				A97DE52D1CE2FDD00053B200 /* MyntTableViewCell.xib */,
 				A98E91521CCC594200670FBA /* Assets.xcassets */,
 				A98E91541CCC594200670FBA /* LaunchScreen.storyboard */,
 				A98E91571CCC594200670FBA /* Info.plist */,
+				A98E918B1CCDE06D00670FBA /* mynt-ios-demo-Bridging-Header.h */,
 			);
 			path = "mynt-ios-demo";
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 				A98E91651CCC595500670FBA /* Assets.xcassets */,
 				A98E91671CCC595500670FBA /* MainMenu.xib */,
 				A98E916A1CCC595500670FBA /* Info.plist */,
+				A98E91871CCDE06000670FBA /* mynt-osx-demo-Bridging-Header.h */,
 			);
 			path = "mynt-osx-demo";
 			sourceTree = "<group>";
@@ -179,6 +189,11 @@
 				TargetAttributes = {
 					A98E91471CCC594200670FBA = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					A98E91601CCC595500670FBA = {
 						CreatedOnToolsVersion = 7.3;
@@ -209,9 +224,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97DE52B1CE2FA5D0053B200 /* MyntTableViewController.xib in Resources */,
+				A97DE52F1CE2FDD00053B200 /* MyntTableViewCell.xib in Resources */,
 				A98E91561CCC594200670FBA /* LaunchScreen.storyboard in Resources */,
 				A98E91531CCC594200670FBA /* Assets.xcassets in Resources */,
-				A98E91511CCC594200670FBA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A98E914E1CCC594200670FBA /* ViewController.swift in Sources */,
+				A97DE52A1CE2FA5D0053B200 /* MyntTableViewController.swift in Sources */,
+				A97DE52E1CE2FDD00053B200 /* MyntTableViewCell.swift in Sources */,
 				A98E914C1CCC594200670FBA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,14 +357,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A98E914F1CCC594200670FBA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A98E91501CCC594200670FBA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A98E91541CCC594200670FBA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -455,10 +464,14 @@
 			baseConfigurationReference = B33535F52B695B5B080AA16D /* Pods-mynt-ios-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "mynt-ios-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mynt-ios-demo/mynt-ios-demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -467,10 +480,13 @@
 			baseConfigurationReference = E0B5D630535B252B987C342B /* Pods-mynt-ios-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "mynt-ios-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mynt-ios-demo/mynt-ios-demo-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -479,6 +495,7 @@
 			baseConfigurationReference = 4B0171699DEC4F5880EFA32E /* Pods-mynt-osx-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "mynt-osx-demo/Info.plist";
@@ -487,6 +504,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-osx-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "mynt-osx-demo/mynt-osx-demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -495,6 +514,7 @@
 			baseConfigurationReference = F853637C6EAC9B5EA1380984 /* Pods-mynt-osx-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "mynt-osx-demo/Info.plist";
@@ -503,6 +523,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-osx-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "mynt-osx-demo/mynt-osx-demo-Bridging-Header.h";
 			};
 			name = Release;
 		};
