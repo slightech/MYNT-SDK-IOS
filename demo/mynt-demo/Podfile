@@ -4,6 +4,5 @@ target 'mynt-osx-demo' do
 end
 target 'mynt-ios-demo' do
     platform :ios, '7.0'
-    pod "UIAlertView-Blocks"
 	pod 'MYNT-SDK-IOS'
 end
