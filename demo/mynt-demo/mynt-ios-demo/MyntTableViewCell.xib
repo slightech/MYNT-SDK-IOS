@@ -11,18 +11,24 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-9s-7ly">
-                        <rect key="frame" x="5" y="5" width="20" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-9s-7ly">
+                        <rect key="frame" x="5" y="5" width="56" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXB-Ye-gt1">
-                        <rect key="frame" x="5" y="27" width="31" height="17"/>
+                        <rect key="frame" x="5" y="34" width="31" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-fU-NEo">
+                        <rect key="frame" x="66" y="5" width="28" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -32,6 +38,8 @@
                     <constraint firstItem="QXB-Ye-gt1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="8ZD-H0-fHA"/>
                     <constraint firstItem="1vU-9s-7ly" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="ER8-Ph-7Ty"/>
                     <constraint firstItem="1vU-9s-7ly" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Pru-bM-rHE"/>
+                    <constraint firstItem="lOv-fU-NEo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ryb-VO-EG4"/>
+                    <constraint firstItem="lOv-fU-NEo" firstAttribute="leading" secondItem="1vU-9s-7ly" secondAttribute="trailing" constant="5" id="Yap-uj-CrR"/>
                     <constraint firstItem="QXB-Ye-gt1" firstAttribute="top" secondItem="1vU-9s-7ly" secondAttribute="bottom" constant="5" id="taS-GU-OBK"/>
                     <constraint firstItem="1vU-9s-7ly" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="uKf-eP-kGI"/>
                     <constraint firstItem="QXB-Ye-gt1" firstAttribute="leading" secondItem="1vU-9s-7ly" secondAttribute="trailing" constant="5" id="uyh-0L-qgY"/>
@@ -47,8 +55,9 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="nameLabel" destination="1vU-9s-7ly" id="okW-D4-kFX"/>
                 <outlet property="rssiLabel" destination="QXB-Ye-gt1" id="tbU-dM-ymD"/>
-                <outlet property="snLabel" destination="1vU-9s-7ly" id="iBf-Yk-omH"/>
+                <outlet property="snLabel" destination="lOv-fU-NEo" id="YSa-dV-lRg"/>
             </connections>
         </tableViewCell>
     </objects>

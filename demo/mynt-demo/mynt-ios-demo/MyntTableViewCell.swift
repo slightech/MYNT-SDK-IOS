@@ -10,14 +10,16 @@ import UIKit
 
 class MyntTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var snLabel: UILabel!
     @IBOutlet weak var rssiLabel: UILabel!
     
     var discovered: Bool = true {
         didSet {
             if discovered != oldValue {
-                snLabel.textColor = discovered ? UIColor.whiteColor() : UIColor.lightGrayColor()
-                rssiLabel.textColor = discovered ? UIColor.whiteColor() : UIColor.lightGrayColor()
+                snLabel.textColor = discovered ? UIColor.blackColor() : UIColor.lightGrayColor()
+                rssiLabel.textColor = discovered ? UIColor.blackColor() : UIColor.lightGrayColor()
+                nameLabel.textColor = discovered ? UIColor.blackColor() : UIColor.lightGrayColor()
             }
         }
     }

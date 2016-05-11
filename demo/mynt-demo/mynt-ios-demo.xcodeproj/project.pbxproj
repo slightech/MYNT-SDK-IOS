@@ -11,6 +11,8 @@
 		A97DE52B1CE2FA5D0053B200 /* MyntTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DE5291CE2FA5D0053B200 /* MyntTableViewController.xib */; };
 		A97DE52E1CE2FDD00053B200 /* MyntTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DE52C1CE2FDD00053B200 /* MyntTableViewCell.swift */; };
 		A97DE52F1CE2FDD00053B200 /* MyntTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DE52D1CE2FDD00053B200 /* MyntTableViewCell.xib */; };
+		A97DE5321CE310FF0053B200 /* MyntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DE5301CE310FF0053B200 /* MyntViewController.swift */; };
+		A97DE5331CE310FF0053B200 /* MyntViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DE5311CE310FF0053B200 /* MyntViewController.xib */; };
 		A98E914C1CCC594200670FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E914B1CCC594200670FBA /* AppDelegate.swift */; };
 		A98E91531CCC594200670FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E91521CCC594200670FBA /* Assets.xcassets */; };
 		A98E91561CCC594200670FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98E91541CCC594200670FBA /* LaunchScreen.storyboard */; };
@@ -28,6 +30,8 @@
 		A97DE5291CE2FA5D0053B200 /* MyntTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyntTableViewController.xib; sourceTree = "<group>"; };
 		A97DE52C1CE2FDD00053B200 /* MyntTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyntTableViewCell.swift; sourceTree = "<group>"; };
 		A97DE52D1CE2FDD00053B200 /* MyntTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyntTableViewCell.xib; sourceTree = "<group>"; };
+		A97DE5301CE310FF0053B200 /* MyntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyntViewController.swift; sourceTree = "<group>"; };
+		A97DE5311CE310FF0053B200 /* MyntViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyntViewController.xib; sourceTree = "<group>"; };
 		A98E91481CCC594200670FBA /* mynt-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mynt-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E914B1CCC594200670FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A98E91521CCC594200670FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				A98E914B1CCC594200670FBA /* AppDelegate.swift */,
 				A97DE5281CE2FA5D0053B200 /* MyntTableViewController.swift */,
 				A97DE5291CE2FA5D0053B200 /* MyntTableViewController.xib */,
+				A97DE5301CE310FF0053B200 /* MyntViewController.swift */,
+				A97DE5311CE310FF0053B200 /* MyntViewController.xib */,
 				A97DE52C1CE2FDD00053B200 /* MyntTableViewCell.swift */,
 				A97DE52D1CE2FDD00053B200 /* MyntTableViewCell.xib */,
 				A98E91521CCC594200670FBA /* Assets.xcassets */,
@@ -225,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A97DE52B1CE2FA5D0053B200 /* MyntTableViewController.xib in Resources */,
+				A97DE5331CE310FF0053B200 /* MyntViewController.xib in Resources */,
 				A97DE52F1CE2FDD00053B200 /* MyntTableViewCell.xib in Resources */,
 				A98E91561CCC594200670FBA /* LaunchScreen.storyboard in Resources */,
 				A98E91531CCC594200670FBA /* Assets.xcassets in Resources */,
@@ -342,6 +349,7 @@
 			files = (
 				A97DE52A1CE2FA5D0053B200 /* MyntTableViewController.swift in Sources */,
 				A97DE52E1CE2FDD00053B200 /* MyntTableViewCell.swift in Sources */,
+				A97DE5321CE310FF0053B200 /* MyntViewController.swift in Sources */,
 				A98E914C1CCC594200670FBA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

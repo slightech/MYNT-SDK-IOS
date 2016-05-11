@@ -8,24 +8,6 @@
 
 import UIKit
 
-extension STMynt {
-    private struct AssociatedKeys {
-        static var DiscoveredName = "mt_DiscoveredName"
-    }
-    
-    var discovered: Bool {
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.DiscoveredName, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-        get {
-            if let discovered = objc_getAssociatedObject(self, &AssociatedKeys.DiscoveredName) as? Bool {
-                return discovered
-            }
-            return false
-        }
-    }
-}
-
 class MyntTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -36,7 +18,7 @@ class MyntTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "mynt list"
+        self.title = "Search MYNTs"
         
         tableView.registerNib(UINib(nibName: "MyntTableViewCell", bundle: nil), forCellReuseIdentifier: "MyntTableViewCell")
         tableView.tableFooterView = UIView()
@@ -56,6 +38,8 @@ class MyntTableViewController: UIViewController {
     @IBAction func clickResearch(sender: AnyObject) {
         mynts = []
         tableView.reloadData()
+        
+        myntBluetooth?.startScan()
     }
 
 }
@@ -63,18 +47,20 @@ class MyntTableViewController: UIViewController {
 extension MyntTableViewController: STMyntBluetoothDelegate {
     
     func myntBluetooth(myntBluetooth: STMyntBluetooth, didUpdateState state: CBCentralManagerState) {
+        
     }
     
     func myntBluetooth(myntBluetooth: STMyntBluetooth, didDiscoverMynt mynt: STMynt) {
+//        if !mynt.sn.hasPrefix("98") {
+//            return
+//        }
         if !mynts.contains(mynt) {
             mynts.append(mynt)
         }
-        mynt.discovered = true
         tableView.reloadData()
     }
     
     func myntBluetooth(myntBluetooth: STMyntBluetooth, didDiscoverTimeoutMynt mynt: STMynt) {
-        mynt.discovered = false
         tableView.reloadData()
     }
     
@@ -94,8 +80,10 @@ extension MyntTableViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("MyntTableViewCell", forIndexPath: indexPath) as? MyntTableViewCell
         
         let mynt = mynts[indexPath.row]
-        cell?.snLabel?.text = "SN: \(mynt.sn)"
+        cell?.snLabel?.text = "\(mynt.sn)"
+        cell?.nameLabel?.text = "\(mynt.name)"
         cell?.rssiLabel?.text = "RSSI: \(mynt.RSSI)"
+        cell?.discovered = mynt.isDiscovering
         
         return cell!
     }
@@ -103,6 +91,15 @@ extension MyntTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
+        let mynt = mynts[indexPath.row]
+        if mynt.isDiscovering {
+            let viewController = MyntViewController()
+            
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Done, target: nil, action: nil)
+            viewController.mynt = mynt
+            viewController.title = mynt.sn
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
 }
