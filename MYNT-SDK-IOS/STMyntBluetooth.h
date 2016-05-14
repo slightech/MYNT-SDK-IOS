@@ -3,7 +3,7 @@
 //  STMyntCoreBluetooth
 //
 //  Created by gejw on 16/3/25.
-//  Copyright © 2016年 robinge. All rights reserved.
+//  Copyright © 2016年 Slightech, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,50 +14,74 @@
 
 @optional
 
+/**
+ *  Invoked when the central manager's state has been updated.
+ *
+ *  @param myntBluetooth
+ *  @param state         the current state of the bluetooth
+ */
 - (void)myntBluetooth:(STMyntBluetooth * _Nonnull)myntBluetooth didUpdateState:(CBCentralManagerState)state;
 
+/**
+ *  Invoked when the mynt has been discoverd.
+ *
+ *  @param myntBluetooth
+ *  @param mynt
+ */
 - (void)myntBluetooth:(STMyntBluetooth * _Nonnull)myntBluetooth didDiscoverMynt:(STMynt * _Nonnull)mynt;
 
+/**
+ *  Invoked when the mynt has been discoverd timeout.
+ *
+ *  @param myntBluetooth
+ *  @param mynt
+ */
 - (void)myntBluetooth:(STMyntBluetooth * _Nonnull)myntBluetooth didDiscoverTimeoutMynt:(STMynt * _Nonnull)mynt;
+
+/**
+ *  Invoked if you need filter the mynts.
+ *
+ *  @param myntBluetooth
+ *  @param sn            the sn of the mynt when the mynt is discoverd.
+ *
+ *  @return if this mynt need filter(don't ues it), so you can need true.
+ */
+- (BOOL)myntBluetooth:(STMyntBluetooth * _Nonnull)myntBluetooth didFilterMyntWithSn:(NSString * _Nonnull)sn;
 
 @end
 
 @interface STMyntBluetooth : NSObject
-
+// Flag to determine if the manager is scanning
 @property (nonatomic, assign) BOOL isScanning;
-// 是否帮助报丢
+// Help others find the mynt
 @property (nonatomic, assign) BOOL reportLost;
-// userid(用于帮助报丢)
+// TODO: userid
 @property (nonatomic, strong, nullable) NSString *userID;
-// 蓝牙状态
+// The current state of the bluetooth
 @property (nonatomic, assign) CBCentralManagerState centralState;
-// delegate
+// Delegate
 @property (nonatomic, weak, nullable) id<STMyntBluetoothDelegate> delegate;
 
-/**
- *  @author Robin
- *
- *  蓝牙SDK单例
- *
- *  @return
- */
 + (instancetype _Nonnull)sharedInstance;
 
+/**
+ *  Get mynt with sn
+ *
+ *  @param sn the sn of the mynt
+ *
+ *  @return mynt
+ */
 - (STMynt * _Nullable)findMyntWithSn:(NSString * _Nonnull)sn;
 
 /**
- *  @author Robin
- *
- *  开始搜索
+ *  Start scanning for mynts.
  *
  *  @param block
  */
 - (void)startScan;
 
 /**
- *  @author Robin
- *
- *  停止搜索
+ *  Stop scanning for mynts.
  */
 - (void)stopScan;
 
