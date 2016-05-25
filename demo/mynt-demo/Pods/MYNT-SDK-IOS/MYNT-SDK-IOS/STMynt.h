@@ -237,7 +237,7 @@
 - (void)writeControlMode:(MYNTControlMode)mode;
 
 /**
- *  Set the custom click type of the mynt
+ *  Set the custom click type of the mynt (if you need update all events, please use [- (void)writeClickType:(MYNTClickType)click doubleClick:(MYNTClickType)doubleClick tripleClick:(MYNTClickType)tripleClick hold:(MYNTClickType)hold clickHold:(MYNTClickType)clickHold;])
  *
  *  @param eventType  event type [MYNTClickEventClick | MYNTClickEventDoubleClick | MYNTClickEventTripleClick | MYNTClickEventHold | MYNTClickEventClickHold]
  *  @param eventValue event value
