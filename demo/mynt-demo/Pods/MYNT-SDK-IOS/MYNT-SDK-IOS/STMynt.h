@@ -3,154 +3,209 @@
 //  STMyntCoreBluetooth
 //
 //  Created by gejw on 15/10/27.
-//  Copyright © 2015年 robinge. All rights reserved.
+//  Copyright © 2015年 Slightech, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#if TARGET_OS_IOS
-    #import <UIKit/UIKit.h>
-    #import <CoreBluetooth/CoreBluetooth.h>
-#else
-    #import <IOBluetooth/IOBluetooth.h>
-#endif
 #import "MYNT_Defines.h"
 
 @class STMynt, STPeripheral;
+
 @protocol STMyntDelegate <NSObject>
 
 @optional
 
+/**
+ *  Invoked when the mynt has been discoverd
+ *
+ *  @param mynt
+ */
 - (void)myntDidDiscovered:(STMynt * _Nonnull)mynt;
 
+/**
+ *  Invoked when the mynt has been discoverd timeout
+ *
+ *  @param mynt
+ */
 - (void)myntDidDiscoveredTimeout:(STMynt * _Nonnull)mynt;
 
+/**
+ *  Invoked when the mynt has started to connect
+ *
+ *  @param mynt
+ */
 - (void)myntDidStartConnect:(STMynt * _Nonnull)mynt;
 
+/**
+ *  Invoked when a connection initiated has succeeded
+ *
+ *  @param mynt
+ */
 - (void)myntDidConnected:(STMynt * _Nonnull)mynt;
 
+/**
+ *  Invoked when a connection initiated has failed to complete
+ *
+ *  @param mynt
+ *  @param error
+ */
 - (void)mynt:(STMynt * _Nonnull)mynt didConnectFailed:(NSError * _Nullable)error;
 
+/**
+ *  Invoked when a connection has been disconnected
+ *
+ *  @param mynt
+ *  @param error
+ */
 - (void)mynt:(STMynt * _Nonnull)mynt didDisconnected:(NSError * _Nullable)error;
 
+/**
+ *  Invoked when the rssi of the mynt has been updated.
+ *
+ *  @param mynt
+ *  @param RSSI the rssi of the mynt
+ */
 - (void)mynt:(STMynt * _Nonnull)mynt didUpdateRSSI:(NSInteger)RSSI;
 
+/**
+ *  Invoked when the battery of the mynt has been updated.
+ *
+ *  @param mynt
+ *  @param battery the battery of the mynt
+ */
 - (void)mynt:(STMynt * _Nonnull)mynt didUpdateBattery:(NSInteger)battery;
 
+/**
+ *  Invoked when the alarm state of the mynt has been updated.
+ *
+ *  @param mynt
+ *  @param alarmState the alarm state of the mynt
+ */
 - (void)mynt:(STMynt * _Nonnull)mynt didUpdateAlarmState:(BOOL)alarmState;
 
+/**
+ *  Invoked when the pair password of the mynt is received (just used with old mynt)
+ *
+ *  @param mynt
+ *  @param password the password will used when the mynt is pairing
+ */
 - (void)mynt:(STMynt * _Nonnull)mynt didUpdatePassword:(NSString * _Nullable)password;
 
+/**
+ *  Invoked when the mynt is clicked
+ *
+ *  @param mynt
+ *  @param clickEvent  the click type of the event (e.g. Click or Double Click)
+ */
 - (void)mynt:(STMynt * _Nonnull)mynt didReceiveClickEvent:(MYNTClickEvent)clickEvent;
 
+/**
+ *  Request the password to pair mynt (just for old version mynt)
+ *
+ *  @param mynt
+ *
+ *  @return password (if the password is null or empty, the mynt will repair)
+ */
 - (NSString * _Nullable)didRequestPassword:(STMynt * _Nonnull)mynt;
 
+/**
+ *  Request the state if the mynt need autoconnect or not
+ *
+ *  @param mynt
+ *
+ *  @return is need autoconnect ?
+ */
 - (BOOL)didRequestAutoconnect:(STMynt * _Nonnull)mynt;
 
+/**
+ *  Invoked when the connection exception
+ *
+ *  @param mynt
+ */
 - (void)didNeedRestartBluetooth:(STMynt * _Nonnull)mynt;
 
 @end
 
 @interface STMynt : NSObject
 
-// 设备名
+// The name of the mynt
 @property (nonatomic, strong, readonly, nonnull) NSString *name;
-// 信号强度
+// The current RSSI of peripheral, in dBm. A value of 127is reserved and indicates the RSSI
 @property (nonatomic, assign) NSInteger RSSI;
-// 固件类型(BLE | HID)
+// FirmwareType (BLE | HID)
 @property (nonatomic, assign, readonly) MYNTFirmwareType firmwareType;
-// 硬件类型(CC25 | CC26)
+// HardwareType (CC25 | CC26)
 @property (nonatomic, assign, readonly) MYNTHardwareType hardwareType;
-// 设备状态
+// The current connection state of the mynt
 @property (nonatomic, assign, readonly) MYNTState state;
 
-// 电量
+// Battery of the mynt
 @property (nonatomic, assign, readonly) NSInteger battery;
-// 控制模式(Default | Music | Camera | PPT | Custom | Default)
+// Control mode
 @property (nonatomic, assign, readonly) MYNTControlMode controlMode;
-// 单击
+// Event of the click type
 @property (nonatomic, assign, readonly) MYNTClickType click;
-// 双击
+// Event of the double click type
 @property (nonatomic, assign, readonly) MYNTClickType doubleClick;
-// 三连击
+// Event of the triple click type
 @property (nonatomic, assign, readonly) MYNTClickType tripleClick;
-// 长按
+// Event of the long press type
 @property (nonatomic, assign, readonly) MYNTClickType hold;
-// 单击 + 长按
+// Event of the click + long press type
 @property (nonatomic, assign, readonly) MYNTClickType clickHold;
-// 制造商信息
+// manufaturer of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *manufaturer;
-// 产品型号
+// Model of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *model;
-// 序列号
+// SN of the mynt
 @property (nonatomic, strong, readonly, nonnull) NSString *sn;
-// 固件版本
+// Firmware of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *firmware;
-// 硬件版本
+// Hardware of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *hardware;
-// 软件版本
+// Software of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *software;
 
-// 是否被发现
+// Flag to determine the mynt is discovering or not
 @property (nonatomic, assign) BOOL isDiscovering;
 
 @property (nonatomic, weak, nullable) id<STMyntDelegate> delegate;
 
 /**
- *  @author Robin
- *
- *  初始化
- *
- *  @param peripheral
- *
- *  @return
- */
-- (instancetype _Nonnull)initWithPeripheral:(STPeripheral * _Nonnull)peripheral;
-
-/**
- *  @author Robin
- *
- *  连接
+ *  Connect mynt
  */
 - (void)connect;
 
 /**
- *  @author Robin
+ *  Connect mynt
  *
- *  连接设备
- *
- *  @param pair
- *  @param success
- *  @param failure
+ *  @param pair (just used with old mynt)
+ *  @param success if the mynt connect success
+ *  @param failure if the mynt connect failed
  */
 - (void)connect:(void (^ _Nullable)(STMynt * _Nonnull, BOOL))pair
         success:(void (^ _Nullable)(STMynt * _Nonnull))success
         failure:(void (^ _Nullable)(STMynt * _Nonnull, NSError * _Nullable))failure;
 
 /**
- *  @author Robin, 16-02-26 21:02:18
- *
- *  断开连接
+ * Disconnect mynt
  */
 - (void)disconnect;
 
 @end
 
-// MARK: =====================读写=====================
+// MARK: =====================read & write func=====================
 @interface STMynt (RW)
 
 /**
- *  @author Robin, 15-10-27 18:10:06
+ *  Alarm mynt or not
  *
- *  寻找小觅（小觅持续报警40s）
- *
- *  @param alarm 是否报警
+ *  @param alarm or stop
  */
 - (void)findMynt:(BOOL)alarm;
 
 /**
- *  @author Robin, 15-10-27 18:10:33
- *
- *  更新固件
+ *  Update the firmware of the mynt
  *
  *  @param
  */
@@ -161,54 +216,44 @@
 
 
 /**
- *  @author Robin, 15-10-27 18:10:30
+ *  Set the alarm times of the mynt
  *
- *  设置报警次数
- *
- *  @param count 次数
+ *  @param count alarm times
  */
 - (void)writeAlarmCount:(NSInteger)count;
 
 /**
- *  @author Robin, 15-10-27 18:10:11
+ *  Set the delay time when mynt alarm
  *
- *  设置延时报警
- *
- *  @param seconds 延时时间(单位:s)
+ *  @param seconds delay time(units: second)
  */
 - (void)writeAlarmDelay:(NSInteger)seconds;
 
 /**
- *  @author Robin, 15-12-02 20:12:20
+ *  Set the control mode of the mynt
  *
- *  设置控制模式
- *
- *  @param mode 模式
+ *  @param mode control mode
  */
 - (void)writeControlMode:(MYNTControlMode)mode;
 
 /**
- *  @author Robin
+ *  Set the custom click type of the mynt
  *
- *  设置按键类型
- *
- *  @param eventType  按键类型 [MYNTClickEventClick | MYNTClickEventDoubleClick | MYNTClickEventTripleClick | MYNTClickEventHold | MYNTClickEventClickHold]
- *  @param eventValue 按键值
+ *  @param eventType  event type [MYNTClickEventClick | MYNTClickEventDoubleClick | MYNTClickEventTripleClick | MYNTClickEventHold | MYNTClickEventClickHold]
+ *  @param eventValue event value
  */
 - (void)writeClickType:(MYNTClickEvent)eventType
             eventValue:(MYNTClickType)eventValue;
 
 
 /**
- *  @author Robin, 16-12-31 16:12:55
+ *  Set the custom click types of the mynt
  *
- *  设置按键类型
- *
- *  @param click       单击
- *  @param doubleClick 双击
- *  @param tripleClick 三连击
- *  @param hold        长按
- *  @param clickHold   单击+长按
+ *  @param click       click
+ *  @param doubleClick double click
+ *  @param tripleClick triple click
+ *  @param hold        long press
+ *  @param clickHold   click + long press
  */
 - (void)writeClickType:(MYNTClickType)click
            doubleClick:(MYNTClickType)doubleClick
@@ -217,50 +262,42 @@
              clickHold:(MYNTClickType)clickHold;
 
 /**
- *  @author Robin, 15-10-27 18:10:18
+ *  Read the battery state of the mynt
  *
- *  读取电量
+ *  @param battery
  */
 - (void)readBattery:(void (^ _Nullable)(NSInteger battery))battery;
 
 /**
- *  @author Robin, 15-12-08 18:12:15
- *
- *  读取信号
+ *  Read the rssi of the mynt
  */
 - (void)readRSSI;
 
 /**
- *  @author Robin, 16-12-31 16:12:19
+ *  Read the deviceInfo of the mynt
  *
- *  读取设备信息
- *
- *  @param type    信息类型
- *  @param handler 回调
+ *  @param type    info type
+ *  @param handler
  */
 - (void)readMyntInfo:(MYNTInfoType)type
              handler:(void(^ _Nullable)(NSString * _Nullable))handler;
 
 /**
- *  @author Robin, 15-12-02 20:12:52
- *
- *  读取控制模式
+ *  Read the controlMode of the mynt
  *
  *  @param handler
  */
 - (void)readControlMode:(void(^ _Nullable)(MYNTControlMode mode))handler;
 
 /**
- *  @author Robin, 16-12-31 16:12:03
- *
- *  读取点击事件(HID设备)
+ *  Read the custom click types of the mynt
  *
  *  @param handler
  */
 - (void)readClickType:(void(^ _Nullable)(MYNTClickType click,
-                               MYNTClickType doubleClick,
-                               MYNTClickType tripleClick,
-                               MYNTClickType hold,
-                               MYNTClickType clickHold))handler;
+                                         MYNTClickType doubleClick,
+                                         MYNTClickType tripleClick,
+                                         MYNTClickType hold,
+                                         MYNTClickType clickHold))handler;
 
 @end

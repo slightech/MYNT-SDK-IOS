@@ -3,10 +3,15 @@
 //  mynt_defines
 //
 //  Created by gejw on 15/12/25.
-//  Copyright © 2015年 slightech. All rights reserved.
+//  Copyright © 2015年 Slightech, Inc. All rights reserved.
 //
 
-
+#if TARGET_OS_IOS
+#import <UIKit/UIKit.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+#else
+#import <IOBluetooth/IOBluetooth.h>
+#endif
 
 typedef NS_ENUM(NSInteger, MYNTClickType) {
     MYNTClickTypeNone = 0x00,
@@ -22,7 +27,7 @@ typedef NS_ENUM(NSInteger, MYNTClickType) {
     MYNTClickTypePPTExit = 0x08,
     MYNTClickTypePhoneFlash = 0xA0,
     MYNTClickTypePhoneAlarm = 0xA1
-} ;
+};
 
 #define MYNTControlModeString(enum) [@[@"MYNTControlModeBLE", @"MYNTControlModeMusic", @"MYNTControlModeCamera", @"MYNTControlModePPT", @"MYNTControlModeCustom", @"MYNTControlModeDefault"] objectAtIndex:enum]
 typedef NS_ENUM(NSInteger, MYNTControlMode) {
@@ -32,7 +37,7 @@ typedef NS_ENUM(NSInteger, MYNTControlMode) {
     MYNTControlModePPT = 0x03,
     MYNTControlModeCustom = 0x04,
     MYNTControlModeDefault = 0x05,
-} ;
+};
 
 #define MYNTClickEventString(enum) [@[@"MYNTClickEventClick", @"MYNTClickEventDoubleClick", @"MYNTClickEventTripleClick", @"MYNTClickEventHold", @"MYNTClickEventClickHold", @"MYNTClickEventPhoneFlash", @"MYNTClickEventPhoneAlarm", @"MYNTClickEventPhoneAlarmOff"] objectAtIndex:enum]
 typedef NS_ENUM(NSInteger, MYNTClickEvent) {
@@ -44,7 +49,7 @@ typedef NS_ENUM(NSInteger, MYNTClickEvent) {
     MYNTClickEventPhoneFlash = 0xA0,
     MYNTClickEventPhoneAlarm = 0xA1,
     MYNTClickEventPhoneAlarmOff = 0xA2
-} ;
+};
 
 #define MYNTInfoTypeString(enum) [@[@"MYNTInfoTypeManufaturer", @"MYNTInfoTypeModel", @"MYNTInfoTypeSn", @"MYNTInfoTypeFirmware", @"MYNTInfoTypeHardware", @"MYNTInfoTypeSoftware"] objectAtIndex:enum]
 typedef NS_ENUM(NSInteger, MYNTInfoType) {
@@ -56,13 +61,11 @@ typedef NS_ENUM(NSInteger, MYNTInfoType) {
     MYNTInfoTypeSoftware,
 };
 
-// 硬件类型
 typedef NS_ENUM(NSInteger, MYNTHardwareType) {
     MYNTHardwareTypeCC25XX = 0x00,
     MYNTHardwareTypeCC26XX = 0x01
 };
 
-// 固件类型
 typedef NS_ENUM(NSInteger, MYNTFirmwareType) {
     MYNTFirmwareTypeBLE = 0x00,
     MYNTFirmwareTypeHID = 0x01
@@ -77,7 +80,7 @@ typedef NS_ENUM(NSInteger, MYNTOADError) {
 };
 
 typedef NS_ENUM(NSInteger, MYNTState) {
-    MYNTStateDisconnected = 0, // 断开连接
-    MYNTStateConnecting, // 连接中
-    MYNTStateConnected, // 连接成功
+    MYNTStateDisconnected = 0,
+    MYNTStateConnecting,
+    MYNTStateConnected,
 };
