@@ -2,18 +2,18 @@
 
 ```
     func myntBluetooth(myntBluetooth: STMyntBluetooth, didUpdateState state: CBCentralManagerState) {
-        // 蓝牙状态更新 (蓝牙关闭，蓝牙打开等等)
+        // Bluetooth status update (Bluetooth including but not limited to: Bluetooth is off, Buletooth is on etc.)
     }
     
     func myntBluetooth(myntBluetooth: STMyntBluetooth, didDiscoverMynt mynt: STMynt) {
-		// 发现设备
+		// Found MYNT
     }
     
     func myntBluetooth(myntBluetooth: STMyntBluetooth, didDiscoverTimeoutMynt mynt: STMynt) {
-    	// 设备发现超时
+    	// The found MYNT is time out
     }
     
     func myntBluetooth(myntBluetooth: STMyntBluetooth, didFilterMyntWithSn sn: String) -> Bool {
-		// 如果需要过滤mynt  实现这个方法
+		// If you want to filter out some MYNT devices as your requirement, use this Func.
     }
 ```

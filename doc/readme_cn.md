@@ -10,7 +10,7 @@
 STMyntBluetooth.sharedInstance()
 ```
 ### - (void)startScan;
-> 使用``startScan ``进行设备搜索，不单单是搜索周边设备，如果您的小觅已经被系统层绑定，也会被搜索到
+> 使用``startScan ``进行设备搜索，不单单是搜索周边设备，如果您的小觅已经被系统层连接，也会被搜索到
 
 ```
 STMyntBluetooth.sharedInstance().startScan()
@@ -40,7 +40,7 @@ STMyntBluetooth.sharedInstance().centralState
 ```
 
 ### @property (nonatomic, assign) BOOL reportLost;
-> 如果你需要将SDK设置为公益寻找，帮助他人一起寻找丢失的小觅，你可以将``reportLost ``设置为true
+> 如果你需要将SDK设置为公益寻找，即帮助他人一起寻找丢失的小觅，你可以将``reportLost ``设置为true
 
 ```
 STMyntBluetooth.sharedInstance(). reportLost = true
@@ -89,7 +89,7 @@ mynt.firmwareType
 ### @property (nonatomic, assign, readonly) MYNTHardwareType hardwareType;
 > 小觅的硬件版本 [通过芯片区分 CC25芯片, CC26芯片]
 > 
-> ⚠️: 市面上只有CC26的芯片在流通
+> ⚠️: 市面上只有CC26xx的芯片在流通
 
 ```
 mynt.hardwareType
@@ -173,21 +173,21 @@ mynt.sn
 ```
 
 ### @property (nonatomic, strong, readonly, nullable) NSString *firmware;
-> 小觅的固件信息
+> 小觅的固件信息(BLE-26XX-2.1.0)
 
 ```
 mynt.firmware
 ```
 
 ### @property (nonatomic, strong, readonly, nullable) NSString *hardware;
-> 小觅的硬件信息
+> 小觅固件打包时间信息(16041516:xx(年) xx(月) xx(日) xx(小时))
 
 ```
 mynt.hardware
 ```
 
 ### @property (nonatomic, strong, readonly, nullable) NSString *software;
-> 小觅的软件信息
+> 小觅的固件版本信息
 
 ```
 mynt.software
@@ -227,7 +227,7 @@ mynt.toggleAlarm(true)
 ### - (void)writeAlarmCount:(NSInteger)count;
 > 设置小觅断线后的报警次数
 > 
-> ⚠️: 小觅断线后是会报警的
+> ⚠️: 用于防丢场景
 
 ```
 mynt.writeAlarmCount(3)
@@ -236,32 +236,34 @@ mynt.writeAlarmCount(3)
 ### - (void)writeAlarmDelay:(NSInteger)seconds;
 > 设置小觅断线后的报警延迟时间
 > 
-> ⚠️: 小觅断线后是会报警的
+> ⚠️: 用于防丢场景，根据蓝牙的性能不同，为了防止误报，iOS一般设置为15S，Androd设备一般设置为40S.
 
 ```
 mynt.writeAlarmDelay(20)
 ```
 
 ### - (void)writeControlMode:(MYNTControlMode)mode;
-> 设置小觅的控制模式，当控制模式为Custom时 小觅的点击事件才会生效
+> 设置小觅的控制模式，当控制模式为Custom时 小觅的自定义点击事件才会生效
 
 ```
 mynt?.writeControlMode(.Music)
 ```
 
 ### - (void)writeClickValue:(MYNTClickEvent)clickEvent eventValue:(MYNTClickValue)eventValue;
-> 设置小觅的点击事件 如果设置的值不是
+> 单独设置小觅的点击事件
 > 
 > ⚠️: 如果设置了点击事件，小觅的控制模式将自动切换为Custom
+> ⚠️: 当且仅当小觅的Controlmode是Custom时，并且eventValue也是Custom时，当用户点击小觅上的按钮时，才会通过``mynt:didReceiveClickEvent:``通知你是单击事件or其他事件。
 
 ```
 mynt?.writeClickValue(.Click, eventValue: .MusicNext)
 ```
 
 ### - (void)writeClickValue:(MYNTClickValue)click doubleClick:(MYNTClickValue)doubleClick tripleClick:(MYNTClickValue)tripleClick hold:(MYNTClickValue)hold clickHold:(MYNTClickValue)clickHold;
-> 设置小觅的点击事件
+> 同时设置小觅的5个点击事件
 > 
 > ⚠️: 如果设置了点击事件，小觅的控制模式将自动切换为Custom
+> ⚠️: 当且仅当小觅的Controlmode是Custom时，并且eventValue也是Custom时，当用户点击小觅上的按钮时，才会通过``mynt:didReceiveClickEvent:``通知你是单击事件or其他事件。
 
 ```
 mynt?.writeClickValue(.MusicPlay, doubleClick: .MusicPlay, tripleClick: .MusicPlay, hold: .MusicPlay, clickHold: .MusicPlay)
@@ -278,7 +280,7 @@ mynt?.readBattery({ (battery) in
 ```
 
 ### - (void)readRSSI;
-> 读取信号强度
+> 读取信号强度RSSI值
 > 
 > ⚠️: 信号强度会在 ``mynt:didUpdateRSSI:``中回调
 

@@ -10,23 +10,23 @@
 STMyntBluetooth.sharedInstance()
 ```
 ### - (void)startScan;
-> Use to start scan mynt (if mynt is paired in system, always return).
+> Use to start scanning mynt (if mynt has paired in system, always return).
 
 ```
 STMyntBluetooth.sharedInstance().startScan()
 ```
 
 ### - (void)stopScan;
-> Use to stop scan mynt.
+> Use to stop scanning mynt.
 
 ```
 STMyntBluetooth.sharedInstance().stopScan()
 ```
 
 ### @property (nonatomic, assign) BOOL isScanning;
-> You can get the state of Scan with ``isScanning``
+> You can get the state of ``isScanning`` with True / False.
 > 
-> ⚠️: If bluetooth is closed, but you did not stopScan, the state of ``isScanning `` always true.
+> ⚠️: If bluetooth is closed, but you do not stopScan, the state of ``isScanning `` will always be true.
 
 ```
 STMyntBluetooth.sharedInstance().isScanning
@@ -54,7 +54,7 @@ let mynts = STMyntBluetooth.sharedInstance().retrieveConnectedMynts()
 ```
 
 ### - (STMynt *)findMyntWithSn:(NSString *_Nonnull)sn;
-> You can get the mynt with the sn
+> You can get the mynt object with the sn from iOS
 
 ```
 let mynt = STMyntBluetooth.sharedInstance().findMyntWithSn("K043E9H9A0")
@@ -96,14 +96,14 @@ mynt.hardwareType
 ```
 
 ### @property (nonatomic, assign, readonly) MYNTState state;
-> The connect state of the mynt. 
+> The connecting state of the mynt. 
 
 ```
 mynt.state
 ```
 
 ### @property (nonatomic, assign, readonly) NSInteger battery;
-> The battery of the mynt.
+> The battery quatity information of the mynt.
 
 ```
 mynt.battery
@@ -117,35 +117,35 @@ mynt.controlMode
 ```
 
 ### @property (nonatomic, assign, readonly) MYNTClickValue click;
-> The value of the click.
+> The value of the operation: click.
 
 ```
 mynt.click
 ```
 
 ### @property (nonatomic, assign, readonly) MYNTClickValue doubleClick;
-> The value of the doubleclick.
+> The value of the operation: doubleclick.
 
 ```
 mynt.doubleClick
 ```
 
 ### @property (nonatomic, assign, readonly) MYNTClickValue tripleClick;
-> The value of the tripleclick.
+> The value of the operation: tripleclick.
 
 ```
 mynt.tripleClick
 ```
 
 ### @property (nonatomic, assign, readonly) MYNTClickValue hold;
-> The value of the hold.
+> The value of the operation: hold.
 
 ```
 mynt.hold
 ```
 
 ### @property (nonatomic, assign, readonly) MYNTClickValue clickHold;
-> The value of the click + hold.
+> The value of the operation: click + hold.
 
 ```
 mynt.clickHold
@@ -173,28 +173,28 @@ mynt.sn
 ```
 
 ### @property (nonatomic, strong, readonly, nullable) NSString *firmware;
-> The firmware of the mynt.
+> The firmware information of the mynt. (BLE-26XX-2.1.0)
 
 ```
 mynt.firmware
 ```
 
 ### @property (nonatomic, strong, readonly, nullable) NSString *hardware;
-> The hardware of the mynt.
+> The firmware compiling date of the mynt. (16041516:xx(year) xx(month) xx(day) xx(hour))
 
 ```
 mynt.hardware
 ```
 
 ### @property (nonatomic, strong, readonly, nullable) NSString *software;
-> The software of the mynt.
+> The firmware version of the mynt.
 
 ```
 mynt.software
 ```
 
 ### @property (nonatomic, assign) BOOL isDiscovering;
-> The flag will true if the mynt is discoverd.
+> The flag will be true if the mynt is discoverd.
 
 ```
 mynt.isDiscovering
@@ -204,23 +204,23 @@ mynt.isDiscovering
 > [STMyntDelegate](readme_en_2.md)
 
 ### - (void)connect;
-> Used to start connect.
+> Used to start Func (connect)
 
 ```
 mynt.connect()
 ```
 
 ### - (void)disconnect;
-> Used to cancel connect.
+> Used to cancel Func (connect)
 
 ```
 mynt.disconnect()
 ```
 
 ### - (void)toggleAlarm:(BOOL)alarm;
-> Uesd to set mynt alarm or not.
+> Uesd to set mynt ring or not.
 > 
-> ⚠️: Mynt will alarm 40 Sec, You can click mynt to stop alarm.
+> ⚠️:When you press the mynt ring icon in App, Mynt will ring for 40 Sec. You can click the button on mynt to stop ringing. This is used for finding items(mynt).
 
 ```
 mynt.toggleAlarm(true)
@@ -229,7 +229,7 @@ mynt.toggleAlarm(true)
 ### - (void)writeAlarmCount:(NSInteger)count;
 > Used to set the alarm times of the mynt wnen mynt is disconnect
 > 
-> ⚠️: if mynt disconnect, mynt will alarm
+> ⚠️: This is used for anti-lost sceanrio. When mynt disconnected with your device, your mynt will alarm x (the value you set) times.
 
 ```
 mynt.writeAlarmCount(3)
@@ -238,32 +238,34 @@ mynt.writeAlarmCount(3)
 ### - (void)writeAlarmDelay:(NSInteger)seconds;
 > Used to set the alarmdelay of the mynt(unit: second)
 > 
-> ⚠️: if mynt disconnect, mynt will alarm
+> ⚠️: This is used for anti-lost sceanrio. When mynt disconnected with your device, how the alarm will be dealyed. This is used to avoid false alarm. For iOS devices, we suggest to set this value to "15" seconds. And for Android device, we would suggest to set this value to "40". Depending on bluetooth performance.
 
 ```
 mynt.writeAlarmDelay(20)
 ```
 
 ### - (void)writeControlMode:(MYNTControlMode)mode;
-> Userd to set the controlmode of the mynt. If the controlMode is Custom, customClickValue will go into effect
+> Used to set the controlmode of the mynt. Only when the controlMode is Custom, customClickValue will be effective.
 
 ```
 mynt?.writeControlMode(.Music)
 ```
 
 ### - (void)writeClickValue:(MYNTClickEvent)clickEvent eventValue:(MYNTClickValue)eventValue;
-> Userd to set the clickvalue of the mynt.
+> Used to set the clickvalue of the mynt.
 > 
 > ⚠️: If set this, controlmode will switch to custom.
+> ⚠️: Only when the Controlmode and eventValue of MYNT are "Custom", when users press the button on MYNT, then you will get notification of what the clickEvent is (click, doubleClick or others) by method ``mynt:didReceiveClickEvent:`` 
 
 ```
 mynt?.writeClickValue(.Click, eventValue: .MusicNext)
 ```
 
 ### - (void)writeClickValue:(MYNTClickValue)click doubleClick:(MYNTClickValue)doubleClick tripleClick:(MYNTClickValue)tripleClick hold:(MYNTClickValue)hold clickHold:(MYNTClickValue)clickHold;
-> Userd to set the clickvalue of the mynt.
+> Used to set the clickvalue of the mynt.
 > 
 > ⚠️: If set this, controlmode will switch to custom.
+> ⚠️: Only when the Controlmode and eventValue of MYNT are "Custom", when users press the button on MYNT, then you will get notification of what the clickEvent is (click, doubleClick or others) by method ``mynt:didReceiveClickEvent:`` 
 
 ```
 mynt?.writeClickValue(.MusicPlay, doubleClick: .MusicPlay, tripleClick: .MusicPlay, hold: .MusicPlay, clickHold: .MusicPlay)

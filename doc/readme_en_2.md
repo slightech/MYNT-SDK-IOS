@@ -1,44 +1,44 @@
 # STMyntDelegate
 
     func myntDidStartConnect(mynt: STMynt) {
-		// 开始连接
+		// Start connecting
     }
     
     func myntDidConnected(mynt: STMynt) {
-		// 连接成功
+		// Connection established
     }
     
     func mynt(mynt: STMynt, didConnectFailed error: NSError?) {
-		// 连接失败
+		// Failed to connect
     }
     
     func mynt(mynt: STMynt, didDisconnected error: NSError?) {
-		// 断开连接
+		// Disconnected
     }
     
     func mynt(mynt: STMynt, didUpdateRSSI RSSI: Int) {
-		// 更新RSSI
+		// RSSI updated
     }
     
     func mynt(mynt: STMynt, didUpdateBattery battery: Int) {
-		// 电池更新
+		// Battery quantity information updated
     }
     
     func mynt(mynt: STMynt, didUpdateAlarmState alarmState: Bool) {
-		// 更新报警状态
+		// Alarm status updated
     }
     
     func mynt(mynt: STMynt, didReceiveClickEvent clickEvent: MYNTClickEvent) {
-    	// ⚠️: 如果controlMode为Custom
-    	// ⚠️: 并且clickValue为CustomClick
-		// 当点击了小觅的按钮，这个方法会回调
+    	// ⚠️: If controlMode is Custom
+    	// ⚠️: And clickValue is CustomClick
+		// When pressed the button in the center of MYNT, the this Func will return a value (clickEvent)
     }
     
     func didRequestAutoconnect(mynt: STMynt) -> Bool {
-    	// 如果你需要小觅自动重连，则需要返回true，反之，返回false 手动调用disconnect时 不会自动重连
+    	// If you want the MYNT re-connect automatically, you should set the reutrn value to "True", else "False". When you manually invoke Func "Disconnect", you App will not connect MYNT automatically.
         return true
     }
     
     func didNeedRestartBluetooth(mynt: STMynt) {
-        // 遇到连接异常的时候，会回调这个方法，你可以在这里通知用户重启蓝牙或者重启手机来保持蓝牙的稳定性
+        // When iOS can not connect to / scan the MYNT device, and log return error, meanwhile the system connect or scan abnormally. System will return this Func (didNeedRestartBluetooth(mynt: STMynt)). You can use it to notify users restart Bluetooth or Phone. When firmware updated and some Bluetooth broadcast values changed, this situation may occur.
     }
