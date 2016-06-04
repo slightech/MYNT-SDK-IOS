@@ -7,124 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MYNT_Defines.h"
-
-@class STMynt, STPeripheral;
-
-@protocol STMyntDelegate <NSObject>
-
-@optional
-
-/**
- *  Invoked when the mynt has been discoverd
- *
- *  @param mynt
- */
-- (void)myntDidDiscovered:(STMynt * _Nonnull)mynt;
-
-/**
- *  Invoked when the mynt has been discoverd timeout
- *
- *  @param mynt
- */
-- (void)myntDidDiscoveredTimeout:(STMynt * _Nonnull)mynt;
-
-/**
- *  Invoked when the mynt has started to connect
- *
- *  @param mynt
- */
-- (void)myntDidStartConnect:(STMynt * _Nonnull)mynt;
-
-/**
- *  Invoked when a connection initiated has succeeded
- *
- *  @param mynt
- */
-- (void)myntDidConnected:(STMynt * _Nonnull)mynt;
-
-/**
- *  Invoked when a connection initiated has failed to complete
- *
- *  @param mynt
- *  @param error
- */
-- (void)mynt:(STMynt * _Nonnull)mynt didConnectFailed:(NSError * _Nullable)error;
-
-/**
- *  Invoked when a connection has been disconnected
- *
- *  @param mynt
- *  @param error
- */
-- (void)mynt:(STMynt * _Nonnull)mynt didDisconnected:(NSError * _Nullable)error;
-
-/**
- *  Invoked when the rssi of the mynt has been updated.
- *
- *  @param mynt
- *  @param RSSI the rssi of the mynt
- */
-- (void)mynt:(STMynt * _Nonnull)mynt didUpdateRSSI:(NSInteger)RSSI;
-
-/**
- *  Invoked when the battery of the mynt has been updated.
- *
- *  @param mynt
- *  @param battery the battery of the mynt
- */
-- (void)mynt:(STMynt * _Nonnull)mynt didUpdateBattery:(NSInteger)battery;
-
-/**
- *  Invoked when the alarm state of the mynt has been updated.
- *
- *  @param mynt
- *  @param alarmState the alarm state of the mynt
- */
-- (void)mynt:(STMynt * _Nonnull)mynt didUpdateAlarmState:(BOOL)alarmState;
-
-/**
- *  Invoked when the pair password of the mynt is received (just used with old mynt)
- *
- *  @param mynt
- *  @param password the password will used when the mynt is pairing
- */
-- (void)mynt:(STMynt * _Nonnull)mynt didUpdatePassword:(NSString * _Nullable)password;
-
-/**
- *  Invoked when the mynt is clicked
- *
- *  @param mynt
- *  @param clickEvent  the click type of the event (e.g. Click or Double Click)
- */
-- (void)mynt:(STMynt * _Nonnull)mynt didReceiveClickEvent:(MYNTClickEvent)clickEvent;
-
-/**
- *  Request the password to pair mynt (just for old version mynt)
- *
- *  @param mynt
- *
- *  @return password (if the password is null or empty, the mynt will repair)
- */
-- (NSString * _Nullable)didRequestPassword:(STMynt * _Nonnull)mynt;
-
-/**
- *  Request the state if the mynt need autoconnect or not
- *
- *  @param mynt
- *
- *  @return is need autoconnect ?
- */
-- (BOOL)didRequestAutoconnect:(STMynt * _Nonnull)mynt;
-
-/**
- *  Invoked when the connection exception
- *
- *  @param mynt
- */
-- (void)didNeedRestartBluetooth:(STMynt * _Nonnull)mynt;
-
-@end
+#import "STConstants.h"
 
 @interface STMynt : NSObject
 
@@ -144,15 +27,15 @@
 // Control mode
 @property (nonatomic, assign, readonly) MYNTControlMode controlMode;
 // Event of the click type
-@property (nonatomic, assign, readonly) MYNTClickType click;
+@property (nonatomic, assign, readonly) MYNTClickValue click;
 // Event of the double click type
-@property (nonatomic, assign, readonly) MYNTClickType doubleClick;
+@property (nonatomic, assign, readonly) MYNTClickValue doubleClick;
 // Event of the triple click type
-@property (nonatomic, assign, readonly) MYNTClickType tripleClick;
+@property (nonatomic, assign, readonly) MYNTClickValue tripleClick;
 // Event of the long press type
-@property (nonatomic, assign, readonly) MYNTClickType hold;
+@property (nonatomic, assign, readonly) MYNTClickValue hold;
 // Event of the click + long press type
-@property (nonatomic, assign, readonly) MYNTClickType clickHold;
+@property (nonatomic, assign, readonly) MYNTClickValue clickHold;
 // manufaturer of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *manufaturer;
 // Model of the mynt
@@ -177,53 +60,26 @@
 - (void)connect;
 
 /**
- *  Connect mynt
- *
- *  @param pair (just used with old mynt)
- *  @param success if the mynt connect success
- *  @param failure if the mynt connect failed
- */
-- (void)connect:(void (^ _Nullable)(STMynt * _Nonnull, BOOL))pair
-        success:(void (^ _Nullable)(STMynt * _Nonnull))success
-        failure:(void (^ _Nullable)(STMynt * _Nonnull, NSError * _Nullable))failure;
-
-/**
  * Disconnect mynt
  */
 - (void)disconnect;
 
-@end
-
-// MARK: =====================read & write func=====================
-@interface STMynt (RW)
-
 /**
- *  Alarm mynt or not
+ *  Alarm mynt or not (alarm will alarm 40s)
  *
- *  @param alarm or stop
+ *  @param alarm alarm or stop
  */
-- (void)findMynt:(BOOL)alarm;
+- (void)toggleAlarm:(BOOL)alarm;
 
 /**
- *  Update the firmware of the mynt
- *
- *  @param
- */
-- (void)updateFirmware:(NSData * _Nullable (^ _Nullable)())start
-              progress:(void (^ _Nullable)(CGFloat))progress
-               success:(void (^ _Nullable)())success
-               failure:(void (^ _Nullable)(MYNTOADError))failure;
-
-
-/**
- *  Set the alarm times of the mynt
+ *  Set how many times MYNT will alarm after the bluetooth connection broken
  *
  *  @param count alarm times
  */
 - (void)writeAlarmCount:(NSInteger)count;
 
 /**
- *  Set the delay time when mynt alarm
+ *  Set how long the alarm will be delayed after the bluetooth connection broken
  *
  *  @param seconds delay time(units: second)
  */
@@ -239,11 +95,11 @@
 /**
  *  Set the custom click type of the mynt
  *
- *  @param eventType  event type [MYNTClickEventClick | MYNTClickEventDoubleClick | MYNTClickEventTripleClick | MYNTClickEventHold | MYNTClickEventClickHold]
- *  @param eventValue event value
+ *  @param clickEvent  click event
+ *  @param eventValue  event value
  */
-- (void)writeClickType:(MYNTClickEvent)eventType
-            eventValue:(MYNTClickType)eventValue;
+- (void)writeClickValue:(MYNTClickEvent)clickEvent
+            eventValue:(MYNTClickValue)eventValue;
 
 
 /**
@@ -255,11 +111,11 @@
  *  @param hold        long press
  *  @param clickHold   click + long press
  */
-- (void)writeClickType:(MYNTClickType)click
-           doubleClick:(MYNTClickType)doubleClick
-           tripleClick:(MYNTClickType)tripleClick
-                  hold:(MYNTClickType)hold
-             clickHold:(MYNTClickType)clickHold;
+- (void)writeClickValue:(MYNTClickValue)click
+           doubleClick:(MYNTClickValue)doubleClick
+           tripleClick:(MYNTClickValue)tripleClick
+                  hold:(MYNTClickValue)hold
+             clickHold:(MYNTClickValue)clickHold;
 
 /**
  *  Read the battery state of the mynt
@@ -294,10 +150,10 @@
  *
  *  @param handler
  */
-- (void)readClickType:(void(^ _Nullable)(MYNTClickType click,
-                                         MYNTClickType doubleClick,
-                                         MYNTClickType tripleClick,
-                                         MYNTClickType hold,
-                                         MYNTClickType clickHold))handler;
+- (void)readClickValue:(void(^ _Nullable)(MYNTClickValue click,
+                                          MYNTClickValue doubleClick,
+                                          MYNTClickValue tripleClick,
+                                          MYNTClickValue hold,
+                                          MYNTClickValue clickHold))handler;
 
 @end

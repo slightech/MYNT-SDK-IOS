@@ -12,8 +12,6 @@ extension MYNTControlMode {
     
     var name: String {
         switch self {
-        case .BLE:
-            return "BLE"
         case .Music:
             return "Music"
         case .Camera:
@@ -24,11 +22,33 @@ extension MYNTControlMode {
             return "Custom"
         case .Default:
             return "Default"
+        default:
+            return ""
         }
     }
 }
 
-extension MYNTClickType {
+extension MYNTClickEvent {
+    
+    var name: String {
+        switch self {
+        case .Click:
+            return "Click"
+        case .DoubleClick:
+            return "DoubleClick"
+        case .TripleClick:
+            return "TripleClick"
+        case .Hold:
+            return "Hold"
+        case .ClickHold:
+            return "ClickHold"
+        default:
+            return ""
+        }
+    }
+}
+
+extension MYNTClickValue {
     
     var name: String {
         switch self {
@@ -52,12 +72,12 @@ extension MYNTClickType {
             return "PPTNextPage"
         case .PPTPreviousPage:
             return "PPTPreviousPage"
-        case .PhoneAlarm:
-            return "PhoneAlarm"
-        case .PhoneFlash:
-            return "PhoneFlash"
+        case .CustomClick:
+            return "CustomClick"
         case .None:
             return "None"
+        default:
+            return ""
         }
     }
     
@@ -78,6 +98,13 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
     
     let MenuAlertTag        = 10000
     let WriteControlModeTag = 10001
+    let WriteClickEventTag = 10002
+    let WriteClickValueTag = 10003
+    
+    let ControlModes: [MYNTControlMode] = [.Music, .Camera, .PPT, .Custom]
+    let ClickEvents: [MYNTClickEvent] = [.Click, .DoubleClick, .TripleClick, .Hold, .ClickHold]
+    let EventValues: [MYNTClickValue] = [.MusicPlay, .MusicNext, .MusicPrevious, .MusicVolumeUp, .MusicVolumeDown,
+                                         .CameraShutter, .CameraBurst, .PPTExit, .PPTNextPage, .PPTPreviousPage, .CustomClick, .None]
     
     weak var mynt: STMynt?
     
@@ -94,14 +121,7 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
 
         mynt?.delegate = self
         self.addLogInfo(mynt: mynt, msg: "|--- start connect ---|")
-        mynt?.connect({ [weak self](mynt, needPair) in
-            self?.addLogInfo(mynt: mynt, msg: "|--- need click mynt to pair ---|")
-            }, success: { [weak self](mynt) in
-                self?.addLogInfo(mynt: mynt, msg: "|--- connect success ---|")
-                self?.connectSuccessHandler()
-            }, failure: { [weak self](mynt, error) in
-                self?.addLogInfo(mynt: mynt, msg: "connect failure \(error)")
-        })
+        mynt?.connect()
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,6 +130,12 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
     }
     
     deinit {
+        mynt?.delegate = nil
+        mynt?.disconnect()
+    }
+    
+    override func removeFromParentViewController() {
+        super.removeFromParentViewController()
         mynt?.delegate = nil
         mynt?.disconnect()
     }
@@ -123,27 +149,35 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
     }
     
     @objc private func _clickMenu(sender: AnyObject) {
-        let menuAlert = UIAlertView(title: nil, message: nil, delegate: self, cancelButtonTitle: "Cancel")
+        let menuAlert = UIAlertView(title: "select action", message: nil, delegate: self, cancelButtonTitle: "Cancel")
         menuAlert.tag = MenuAlertTag
         menuAlert.addButtonWithTitle("Toggle alarm")
         menuAlert.addButtonWithTitle("Read battery")
         menuAlert.addButtonWithTitle("Read deviceInfo")
         menuAlert.addButtonWithTitle("Read control mode")
         menuAlert.addButtonWithTitle("Send control mode")
+        menuAlert.addButtonWithTitle("Read click event")
+        menuAlert.addButtonWithTitle("Send click event")
+        menuAlert.addButtonWithTitle("Clean log")
         menuAlert.show()
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 0 {
+            return
+        }
         switch alertView.tag {
         case MenuAlertTag:
             switch buttonIndex {
             case 1:
-                mynt?.findMynt(true)
+                mynt?.toggleAlarm(true)
             case 2:
+                addLogInfo(mynt: mynt, msg: "")
                 mynt?.readBattery({ [weak self](battery) in
                     self?.addLogInfo(mynt: self?.mynt, msg: "battery -> \(battery)")
                     })
             case 3:
+                self.addLogInfo(mynt: mynt, msg: "")
                 mynt?.readMyntInfo(MYNTInfoType.Firmware, handler: { [weak self](info) in
                     self?.addLogInfo(mynt: self?.mynt, msg: "firmware -> \(info)")
                     })
@@ -167,36 +201,47 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
                     self?.addLogInfo(mynt: self?.mynt, msg: "read control mode -> \(controlMode.name)")
                     })
             case 5:
-                let alertView = UIAlertView(title: "write control mode", message: nil, delegate: self, cancelButtonTitle: "Cancel")
-                alertView.tag = WriteControlModeTag
-                alertView.addButtonWithTitle("Music")
-                alertView.addButtonWithTitle("Camera")
-                alertView.addButtonWithTitle("PPT")
-                alertView.addButtonWithTitle("Custom")
-                alertView.show()
+                showAlart("write control mode", tag: WriteControlModeTag, items: ControlModes.map({"\($0.name)"}))
+            case 6:
+                addLogInfo(mynt: mynt, msg: "")
+                mynt?.readClickValue({ [weak self](click, doubleClick, tripleClick, hold, clickHold) in
+                    self?.addLogInfo(mynt: self?.mynt, msg: "click -> \(click.name)")
+                    self?.addLogInfo(mynt: self?.mynt, msg: "doubleClick -> \(doubleClick.name)")
+                    self?.addLogInfo(mynt: self?.mynt, msg: "tripleClick -> \(tripleClick.name)")
+                    self?.addLogInfo(mynt: self?.mynt, msg: "hold -> \(hold.name)")
+                    self?.addLogInfo(mynt: self?.mynt, msg: "clickHold -> \(clickHold.name)")
+                })
+            case 7:
+                showAlart("select click event", tag: WriteClickEventTag, items: ClickEvents.map({"\($0.name)"}))
+            case 8:
+                logView.text = ""
             default:
                 break
             }
         case WriteControlModeTag:
-            switch buttonIndex {
-            case 1:
-                mynt?.writeControlMode(MYNTControlMode.Music)
-                addLogInfo(mynt: mynt, msg: "write control mode -> Music")
-            case 2:
-                mynt?.writeControlMode(MYNTControlMode.Camera)
-                addLogInfo(mynt: mynt, msg: "write control mode -> Camera")
-            case 3:
-                mynt?.writeControlMode(MYNTControlMode.PPT)
-                addLogInfo(mynt: mynt, msg: "write control mode -> PPT")
-            case 4:
-                mynt?.writeControlMode(MYNTControlMode.Custom)
-                addLogInfo(mynt: mynt, msg: "write control mode -> Custom")
-            default:
-                break
-            }
+            mynt?.writeControlMode(ControlModes[buttonIndex - 1])
+            addLogInfo(mynt: mynt, msg: "write control mode -> \(ControlModes[buttonIndex - 1].name)")
+            
+        case WriteClickEventTag:
+            currentClickEvent = ClickEvents[buttonIndex - 1]
+            showAlart("write click value", tag: WriteClickValueTag, items: EventValues.map({"\($0.name)"}))
+            
+        case WriteClickValueTag:
+            mynt?.writeClickValue(currentClickEvent, eventValue: EventValues[buttonIndex - 1])
+            addLogInfo(mynt: mynt, msg: "write click value  \(currentClickEvent.name)-> \(EventValues[buttonIndex - 1].name)")
         default:
             break
         }
+    }
+    
+    var currentClickEvent = MYNTClickEvent.Click
+    func showAlart(title: String, tag: Int, items: [String]) {
+        let alertView = UIAlertView(title: title, message: nil, delegate: self, cancelButtonTitle: "Cancel")
+        alertView.tag = tag
+        for item in items {
+            alertView.addButtonWithTitle(item)
+        }
+        alertView.show()
     }
 }
 
@@ -219,14 +264,6 @@ extension MyntViewController: STMyntDelegate {
             addLogInfo(mynt: mynt, msg: "hold event -> \(mynt.hold.name)")
             addLogInfo(mynt: mynt, msg: "clickHold event -> \(mynt.clickHold.name)")
         }
-    }
-    
-    func myntDidDiscovered(mynt: STMynt) {
-//        addLogInfo(mynt: mynt, msg: "myntDidDiscovered")
-    }
-    
-    func myntDidDiscoveredTimeout(mynt: STMynt) {
-//        addLogInfo(mynt: mynt, msg: "myntDidDiscoveredTimeout")
     }
     
     func myntDidStartConnect(mynt: STMynt) {
@@ -260,22 +297,13 @@ extension MyntViewController: STMyntDelegate {
         addLogInfo(mynt: mynt, msg: "alarmState \(alarmState)")
     }
     
-    func mynt(mynt: STMynt, didUpdatePassword password: String?) {
-        addLogInfo(mynt: mynt, msg: "didUpdatePassword \(password)")
-    }
-    
     func mynt(mynt: STMynt, didReceiveClickEvent clickEvent: MYNTClickEvent) {
-        addLogInfo(mynt: mynt, msg: "didReceiveClickEvent \(clickEvent)")
-    }
-    
-    func didRequestPassword(mynt: STMynt) -> String? {
-        // 请求密钥
-        return nil
+        addLogInfo(mynt: mynt, msg: "didReceiveClickEvent \(clickEvent.name)")
     }
     
     func didRequestAutoconnect(mynt: STMynt) -> Bool {
         // 是否需要自动重连
-        return false
+        return true
     }
     
     func didNeedRestartBluetooth(mynt: STMynt) {

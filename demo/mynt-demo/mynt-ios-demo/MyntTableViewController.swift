@@ -25,8 +25,8 @@ class MyntTableViewController: UIViewController {
         
         // init bluetooth
         myntBluetooth = STMyntBluetooth.sharedInstance()
-        myntBluetooth?.delegate = self
-        myntBluetooth?.startScan()
+        STMyntBluetooth.sharedInstance().delegate = self
+        STMyntBluetooth.sharedInstance().startScan()
         
     }
 
@@ -63,6 +63,12 @@ extension MyntTableViewController: STMyntBluetoothDelegate {
     func myntBluetooth(myntBluetooth: STMyntBluetooth, didDiscoverTimeoutMynt mynt: STMynt) {
         tableView.reloadData()
     }
+    
+//    func myntBluetooth(myntBluetooth: STMyntBluetooth, didFilterMyntWithSn sn: String) -> Bool {
+//        // 过滤小觅
+//        return sn != "B02CE9H9A0" && sn != "KB9F7HR3Q0" && sn != "XG2PF9H9A0"
+//        //            && sn != "E5G37HR3Q0"
+//    }
     
 }
 
