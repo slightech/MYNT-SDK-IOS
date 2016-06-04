@@ -19,22 +19,22 @@
 		0A377D91BD940A3AD64AE00F00DBDCF6 /* Pods-mynt-osx-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mynt-osx-demo-acknowledgements.plist"; sourceTree = "<group>"; };
 		0C9B27147F043AA35FBDAA1C9FA9DAA1 /* Pods-mynt-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mynt-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
 		1968C2FED1030C52788F4D12A52C6936 /* Pods-mynt-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mynt-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		1E31D52FB43A86B12D9F48B5E3995DF9 /* STConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STConstants.h; path = "MYNT-SDK-IOS/STConstants.h"; sourceTree = "<group>"; };
+		2A9BE8C275C0F1CEB8A4F500E2383E7A /* STMyntBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STMyntBluetooth.h; path = "MYNT-SDK-IOS/STMyntBluetooth.h"; sourceTree = "<group>"; };
 		30CB69CF693F13D847C02B13C07573EE /* Pods-mynt-ios-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mynt-ios-demo-dummy.m"; sourceTree = "<group>"; };
-		3C7175207E548BDF20E8AEB5ED22B244 /* STMyntBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STMyntBluetooth.h; path = "MYNT-SDK-IOS/STMyntBluetooth.h"; sourceTree = "<group>"; };
 		54B496EFB910314C4866FF1839331EDF /* Pods-mynt-osx-demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-osx-demo-frameworks.sh"; sourceTree = "<group>"; };
-		5765EBA8D97EA07EE2B934F99852EE97 /* MYNT_Defines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MYNT_Defines.h; path = "MYNT-SDK-IOS/MYNT_Defines.h"; sourceTree = "<group>"; };
+		5744D0DBB71B82416F35DE2D090DD278 /* libSTMyntBluetooth.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSTMyntBluetooth.a; path = "MYNT-SDK-IOS/osx/libSTMyntBluetooth.a"; sourceTree = "<group>"; };
 		5F230D6AE9AA66350E6AAFBFFB5AB659 /* libPods-mynt-osx-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-osx-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		75B1C3560876C2DC966F8FD86DA915C8 /* STMynt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STMynt.h; path = "MYNT-SDK-IOS/STMynt.h"; sourceTree = "<group>"; };
-		7CB0562C4F752E9829C950A1AFF854FF /* libSTMyntBluetooth.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSTMyntBluetooth.a; path = "MYNT-SDK-IOS/ios/libSTMyntBluetooth.a"; sourceTree = "<group>"; };
 		931198401E8A5097FFFF9854394C5774 /* Pods-mynt-osx-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mynt-osx-demo-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		993D5E15BBBC4D87237EC72EDAE74269 /* Pods-mynt-ios-demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-ios-demo-resources.sh"; sourceTree = "<group>"; };
+		A365A08EBFE151AEC255F291DE7FD30B /* libSTMyntBluetooth.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSTMyntBluetooth.a; path = "MYNT-SDK-IOS/ios/libSTMyntBluetooth.a"; sourceTree = "<group>"; };
 		B09D602B06B2204C5A6BC314155B29A3 /* Pods-mynt-osx-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mynt-osx-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		B0C89EDC2EC27D60F4934F3C043A7D91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DBF0F6F486790EFECB2E64C8F27CA25A /* Pods-mynt-ios-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mynt-ios-demo-acknowledgements.plist"; sourceTree = "<group>"; };
+		DC86EC911C9150452EBEC73902EFAD57 /* STMynt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STMynt.h; path = "MYNT-SDK-IOS/STMynt.h"; sourceTree = "<group>"; };
 		DD09076F56DD54B363F2B189D57A6F51 /* Pods-mynt-ios-demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-ios-demo-frameworks.sh"; sourceTree = "<group>"; };
 		DE25DD04263CA735DBC0065D686C708D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		DF6AA7332A5F9441A0C323061341D147 /* libSTMyntBluetooth.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSTMyntBluetooth.a; path = "MYNT-SDK-IOS/osx/libSTMyntBluetooth.a"; sourceTree = "<group>"; };
 		E202836E3FA567079D1F20994D376106 /* Pods-mynt-ios-demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mynt-ios-demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F7D607929646677F60C9911F6EB545A3 /* libPods-mynt-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7F11E4D7A7A3C2D9C22D09AA4D4E32 /* Pods-mynt-osx-demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-osx-demo-resources.sh"; sourceTree = "<group>"; };
@@ -87,6 +87,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4ED4B94B7C767AD35AA4DB2B17492B67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5744D0DBB71B82416F35DE2D090DD278 /* libSTMyntBluetooth.a */,
+				A365A08EBFE151AEC255F291DE7FD30B /* libSTMyntBluetooth.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6F261B76C9C085486968A86DA7E48E17 /* Pods-mynt-osx-demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,15 +130,6 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
-		97B3C3A8E69D91047F63C90FC8C7587A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DF6AA7332A5F9441A0C323061341D147 /* libSTMyntBluetooth.a */,
-				7CB0562C4F752E9829C950A1AFF854FF /* libSTMyntBluetooth.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AF20CF18E6066C57F81832AB206C7260 /* Pods-mynt-ios-demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,13 +145,13 @@
 			path = "Target Support Files/Pods-mynt-ios-demo";
 			sourceTree = "<group>";
 		};
-		C277211B5413CC0B27B27E29F8C997A8 /* MYNT-SDK-IOS */ = {
+		C3B0842F451793237C23EBA36E30A72D /* MYNT-SDK-IOS */ = {
 			isa = PBXGroup;
 			children = (
-				5765EBA8D97EA07EE2B934F99852EE97 /* MYNT_Defines.h */,
-				75B1C3560876C2DC966F8FD86DA915C8 /* STMynt.h */,
-				3C7175207E548BDF20E8AEB5ED22B244 /* STMyntBluetooth.h */,
-				97B3C3A8E69D91047F63C90FC8C7587A /* Frameworks */,
+				1E31D52FB43A86B12D9F48B5E3995DF9 /* STConstants.h */,
+				DC86EC911C9150452EBEC73902EFAD57 /* STMynt.h */,
+				2A9BE8C275C0F1CEB8A4F500E2383E7A /* STMyntBluetooth.h */,
+				4ED4B94B7C767AD35AA4DB2B17492B67 /* Frameworks */,
 			);
 			path = "MYNT-SDK-IOS";
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 		E28619FA4AC71C31F193233F2A6CCB83 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C277211B5413CC0B27B27E29F8C997A8 /* MYNT-SDK-IOS */,
+				C3B0842F451793237C23EBA36E30A72D /* MYNT-SDK-IOS */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
