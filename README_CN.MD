@@ -1,95 +1,28 @@
-![](https://raw.githubusercontent.com/slightech/MYNT-SDK-Android/master/static/slide_mynt.png)
 
+![](https://raw.githubusercontent.com/slightech/MYNT-SDK-Android/master/static/slide_mynt.png)
 
 [MYNT]: https://mynt.slightech.com/
 
 # MYNT SDK
 
-The SDK to help developers to search and control MYNTs conveniently. 
+MYNT SDK 用于帮助开发者更快得实现小觅的搜索和控制。
 
-* Listen the MYNTs connect state, do scan, connect, disconnect etc.
-* Set the MYNTs click events with HID or custom actions to control music, camera, PPT etc.
+* 监听小觅连接状态，操作扫描、连接、断开等。
+* 设定小觅单双击等行为，HID或自定义，控制音乐、相机、PPT等。
 
-## What is [MYNT][]
+## [小觅][MYNT] 是什么？
 
-MYNT is a thinnest smart tracker, only 1/8 inch. Easy to fit in a wallet, attach to a keychain, or affix to a laptop or a TV remote.
+小觅是一款超薄的智能防丢器，厚度仅0.35cm，轻松挂在钥匙，夹在钱包，放进行李，贴在物品表面。
 
-MYNT is a most exquisite smart tracker, processed with PVD technology on stainless steel with frosting or polishing. Four colors are optional: Silver, Black, Gold, and Blue.
+小觅是一款超酷的智能防丢器，采用不锈钢PVD工艺，镜面或磨砂，银黑金蓝四色可选，独有外观专利。
 
 ![](https://raw.githubusercontent.com/slightech/MYNT-SDK-Android/master/static/colorful.png)
 
-MYNT is not just a smart tracker, can also become your everyday smart companion. In addition to anti-loss and finder capability, MYNT can also act the following really cool utilities:
+小觅防丢，人狗不丢：双向寻物、社区找回、携手公益。
 
-* Remote shutter: Free your hand, release your passion.
-* Music remoter: Control freely, enjoy your music.
-* Slide remoter: Control freely, facilitate efficiency.
+小觅不只是防丢器，更是生活好伴侣：放手自拍、随心切歌、遥控PPT。
 
 ![](https://raw.githubusercontent.com/slightech/MYNT-SDK-Android/master/static/slide-ctr-photo.png)
 
-MYNT - No lost, all found, control everything.
-
-- Website: https://mynt.slightech.com
-- Purchase: https://www.amazon.com/dp/B017QML97W
-
-## Installation
-
-### CocoaPods
-	
-1. Add `pod 'MYNT-SDK-IOS'` to your Podfile.
-2. Run `pod install` or `pod update`.
-3. import \<STMyntBluetooth.h\>.
-
-### Manually
-
-1. Download all the files in the `MYNT-SDK-IOS` subdirectory.
-2. Add the source files to your Xcode project.
-3. add frameworks:
-
-	> ios 
-	
-	* CoreBluetooth
-	* sqlite3
-
-	> osx
-	
-	* IOBluetooth
-	* sqlite3
-4. import `STMyntBluetooth.h`.
-
-## Requirements
-This library requires `iOS 7.0+` and `OSX 10.9+`.
-
-###[Documentation](doc/readme_en.md)
-
----
-
-## 安装
-
-### CocoaPods
-
-1. 在 Podfile 中添加 `pod 'MYNT-SDK-IOS'`。
-2. 执行 `pod install` 或 `pod update`.
-3. 导入 \<STMyntBluetooth.h\>.
-
-
-### 手动安装
-
-1. 下载 `MYNT-SDK-IOS` 文件夹内的所有内容。
-2. 将 `MYNT-SDK-IOS` 内的源文件添加(拖放)到你的工程。
-3. 加入frameworks:
-
-	> ios 
-	
-	* CoreBluetooth
-	* sqlite3
-
-	> osx
-	
-	* IOBluetooth
-	* sqlite3
-4. 导入 `STMyntBluetooth.h`.
-
-## 系统要求
-该项目最低支持 `iOS 7.0` 和 `OSX 10.9`。
-
-###[文档](doc/readme_cn.md)
+- 官网：http://mynt.slightech.com/cn 
+- 购买：https://xiaomishuma.tmall.com/
