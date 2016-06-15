@@ -34,7 +34,7 @@ MYNT - No lost, all found, control everything.
 - Purchase: https://www.amazon.com/dp/B017QML97W
 
 ---
-###[中文介绍](README_CN.md)
+###[中文介绍](README_CN.MD)
 ---
 
 [![CocoaPods](http://img.shields.io/cocoapods/v/MYNT-SDK-IOS.svg?style=flat)](http://cocoapods.org/?q=MYNT-SDK-IOS)&nbsp;
