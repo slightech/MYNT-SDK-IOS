@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MYNT-SDK-IOS"
-  s.version      = "1.1.2"
+  s.version      = "1.1.3"
   s.summary      = "Slightech's Mynt BLE SDK for iOS & OSX"
   s.homepage     = 'https://github.com/slightech/MYNT-SDK-IOS'
   s.author       = { 'robinge' => 'robinge@slightech.com' }
