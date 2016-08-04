@@ -1,6 +1,6 @@
 {
   "name": "MYNT-SDK-IOS",
-  "version": "1.1.4",
+  "version": "1.1.1",
   "summary": "Slightech's Mynt BLE SDK for iOS & OSX",
   "homepage": "https://github.com/slightech/MYNT-SDK-IOS",
   "authors": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/slightech/MYNT-SDK-IOS.git",
-    "tag": "1.1.4"
+    "tag": "1.1.1"
   },
   "platforms": {
     "ios": "7.0",

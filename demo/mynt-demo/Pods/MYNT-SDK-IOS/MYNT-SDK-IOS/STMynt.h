@@ -48,8 +48,6 @@
 @property (nonatomic, strong, readonly, nullable) NSString *hardware;
 // Software of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *software;
-// MAC address of the mynt
-@property (nonatomic, strong, readonly, nullable) NSString *mac;
 
 // Flag to determine the mynt is discovering or not
 @property (nonatomic, assign) BOOL isDiscovering;

@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-mynt-ios-demo.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-mynt-osx-demo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -18,11 +13,6 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>45DF255BFE8B62E1A6112A95F8820988</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B8176497D50F635B74A59C58BA280F0C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
