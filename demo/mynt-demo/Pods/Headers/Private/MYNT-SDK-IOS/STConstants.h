@@ -1,1 +1,0 @@
-../../../MYNT-SDK-IOS/MYNT-SDK-IOS/STConstants.h

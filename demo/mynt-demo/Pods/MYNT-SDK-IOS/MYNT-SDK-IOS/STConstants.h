@@ -79,6 +79,7 @@ typedef NS_ENUM(NSInteger, MYNTOADError) {
 
 typedef NS_ENUM(NSInteger, MYNTState) {
     MYNTStateDisconnected = 0x00,
+    MYNTStateStartConnecting,
     MYNTStateConnecting,
     MYNTStateConnected,
 };
