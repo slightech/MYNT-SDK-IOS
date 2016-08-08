@@ -23,7 +23,13 @@
 	
 	* IOBluetooth
 	* sqlite3
-4. 导入 `STMyntBluetooth.h`.
+4. 添加 **-ObjC**
+
+		Build Settings -> Other Linker Flags 
+		
+		add  -ObjC
+	
+5. 导入 `STMyntBluetooth.h`.
 
 ## 系统要求
 该项目最低支持 `iOS 7.0` 和 `OSX 10.9`。

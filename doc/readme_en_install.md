@@ -21,7 +21,12 @@
 	
 	* IOBluetooth
 	* sqlite3
-4. import `STMyntBluetooth.h`.
+4. 添加 **-ObjC**
+
+		Build Settings -> Other Linker Flags 
+		
+		add  -ObjC
+5. import `STMyntBluetooth.h`.
 
 ## Requirements
 This library requires `iOS 7.0+` and `OSX 10.9+`.
