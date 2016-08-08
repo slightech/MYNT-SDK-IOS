@@ -1,8 +1,8 @@
-target 'mynt-osx-demo' do
-    platform :osx, '10.9'
-    pod 'MYNT-SDK-IOS', :podspec=>"../../MYNT-SDK-IOS.podspec"
-end
+#target 'mynt-osx-demo' do
+#    platform :osx, '10.9'
+#    pod 'MYNT-SDK-IOS'
+#end
 target 'mynt-ios-demo' do
     platform :ios, '7.0'
-    pod 'MYNT-SDK-IOS', :podspec=>"../../MYNT-SDK-IOS.podspec"
+    pod 'MYNT-SDK-IOS'
 end

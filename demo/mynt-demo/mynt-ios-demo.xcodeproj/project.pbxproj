@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		688BCA88D8C79776D4A53866 /* libPods-mynt-ios-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BF5B52873C2BD9B59FFDA0 /* libPods-mynt-ios-demo.a */; };
 		A97DE52A1CE2FA5D0053B200 /* MyntTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DE5281CE2FA5D0053B200 /* MyntTableViewController.swift */; };
 		A97DE52B1CE2FA5D0053B200 /* MyntTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97DE5291CE2FA5D0053B200 /* MyntTableViewController.xib */; };
 		A97DE52E1CE2FDD00053B200 /* MyntTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DE52C1CE2FDD00053B200 /* MyntTableViewCell.swift */; };
@@ -16,15 +17,12 @@
 		A98E914C1CCC594200670FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E914B1CCC594200670FBA /* AppDelegate.swift */; };
 		A98E91531CCC594200670FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E91521CCC594200670FBA /* Assets.xcassets */; };
 		A98E91561CCC594200670FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98E91541CCC594200670FBA /* LaunchScreen.storyboard */; };
-		A98E91641CCC595500670FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E91631CCC595500670FBA /* AppDelegate.swift */; };
-		A98E91661CCC595500670FBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98E91651CCC595500670FBA /* Assets.xcassets */; };
-		A98E91691CCC595500670FBA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98E91671CCC595500670FBA /* MainMenu.xib */; };
-		B031252BCD65D9E53AFA279E /* libPods-mynt-osx-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE784E6D0EE4D8D736596208 /* libPods-mynt-osx-demo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B0171699DEC4F5880EFA32E /* Pods-mynt-osx-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-osx-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		70BF5B52873C2BD9B59FFDA0 /* libPods-mynt-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8255466F9A918E45AE0A42AF /* Pods-mynt-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-ios-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
 		A97DE5281CE2FA5D0053B200 /* MyntTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyntTableViewController.swift; sourceTree = "<group>"; };
 		A97DE5291CE2FA5D0053B200 /* MyntTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyntTableViewController.xib; sourceTree = "<group>"; };
 		A97DE52C1CE2FDD00053B200 /* MyntTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyntTableViewCell.swift; sourceTree = "<group>"; };
@@ -36,13 +34,13 @@
 		A98E91521CCC594200670FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A98E91551CCC594200670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A98E91571CCC594200670FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A98E91611CCC595500670FBA /* mynt-osx-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mynt-osx-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98E91631CCC595500670FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A98E91651CCC595500670FBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A98E91681CCC595500670FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A98E916A1CCC595500670FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A98E91871CCDE06000670FBA /* mynt-osx-demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynt-osx-demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		A98E918B1CCDE06D00670FBA /* mynt-ios-demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mynt-ios-demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF78C06C37E233781ECBA118 /* Pods-mynt-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-ios-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		F853637C6EAC9B5EA1380984 /* Pods-mynt-osx-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mynt-osx-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo.release.xcconfig"; sourceTree = "<group>"; };
 		FE784E6D0EE4D8D736596208 /* libPods-mynt-osx-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-osx-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -52,14 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A98E915E1CCC595500670FBA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B031252BCD65D9E53AFA279E /* libPods-mynt-osx-demo.a in Frameworks */,
+				688BCA88D8C79776D4A53866 /* libPods-mynt-ios-demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +62,8 @@
 			children = (
 				4B0171699DEC4F5880EFA32E /* Pods-mynt-osx-demo.debug.xcconfig */,
 				F853637C6EAC9B5EA1380984 /* Pods-mynt-osx-demo.release.xcconfig */,
+				CF78C06C37E233781ECBA118 /* Pods-mynt-ios-demo.debug.xcconfig */,
+				8255466F9A918E45AE0A42AF /* Pods-mynt-ios-demo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -99,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				A98E91481CCC594200670FBA /* mynt-ios-demo.app */,
-				A98E91611CCC595500670FBA /* mynt-osx-demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,26 +149,6 @@
 			productReference = A98E91481CCC594200670FBA /* mynt-ios-demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A98E91601CCC595500670FBA /* mynt-osx-demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A98E916D1CCC595500670FBA /* Build configuration list for PBXNativeTarget "mynt-osx-demo" */;
-			buildPhases = (
-				CAE73562188C4E10C56C5800 /* [CP] Check Pods Manifest.lock */,
-				A98E915D1CCC595500670FBA /* Sources */,
-				A98E915E1CCC595500670FBA /* Frameworks */,
-				A98E915F1CCC595500670FBA /* Resources */,
-				F6AF830BAABABDA24B46EDC2 /* [CP] Embed Pods Frameworks */,
-				644333F3A1F45DA18F6A4611 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "mynt-osx-demo";
-			productName = "mynt-osx-demo";
-			productReference = A98E91611CCC595500670FBA /* mynt-osx-demo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -196,9 +168,6 @@
 							};
 						};
 					};
-					A98E91601CCC595500670FBA = {
-						CreatedOnToolsVersion = 7.3;
-					};
 				};
 			};
 			buildConfigurationList = A98E91431CCC594200670FBA /* Build configuration list for PBXProject "mynt-ios-demo" */;
@@ -215,7 +184,6 @@
 			projectRoot = "";
 			targets = (
 				A98E91471CCC594200670FBA /* mynt-ios-demo */,
-				A98E91601CCC595500670FBA /* mynt-osx-demo */,
 			);
 		};
 /* End PBXProject section */
@@ -230,15 +198,6 @@
 				A97DE52F1CE2FDD00053B200 /* MyntTableViewCell.xib in Resources */,
 				A98E91561CCC594200670FBA /* LaunchScreen.storyboard in Resources */,
 				A98E91531CCC594200670FBA /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A98E915F1CCC595500670FBA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A98E91661CCC595500670FBA /* Assets.xcassets in Resources */,
-				A98E91691CCC595500670FBA /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,21 +234,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mynt-ios-demo/Pods-mynt-ios-demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		644333F3A1F45DA18F6A4611 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AC26E39892A9CB5AF3F73325 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,37 +246,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CAE73562188C4E10C56C5800 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F6AF830BAABABDA24B46EDC2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mynt-osx-demo/Pods-mynt-osx-demo-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -346,14 +260,6 @@
 				A97DE52E1CE2FDD00053B200 /* MyntTableViewCell.swift in Sources */,
 				A97DE5321CE310FF0053B200 /* MyntViewController.swift in Sources */,
 				A98E914C1CCC594200670FBA /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A98E915D1CCC595500670FBA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A98E91641CCC595500670FBA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +372,7 @@
 		};
 		A98E915B1CCC594200670FBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF78C06C37E233781ECBA118 /* Pods-mynt-ios-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -482,6 +389,7 @@
 		};
 		A98E915C1CCC594200670FBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8255466F9A918E45AE0A42AF /* Pods-mynt-ios-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -492,51 +400,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mynt-ios-demo/mynt-ios-demo-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		A98E916B1CCC595500670FBA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B0171699DEC4F5880EFA32E /* Pods-mynt-osx-demo.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "mynt-osx-demo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/MYNT-SDK-IOS/MYNT-SDK-IOS/osx\"",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-osx-demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "mynt-osx-demo/mynt-osx-demo-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		A98E916C1CCC595500670FBA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F853637C6EAC9B5EA1380984 /* Pods-mynt-osx-demo.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "mynt-osx-demo/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/MYNT-SDK-IOS/MYNT-SDK-IOS/osx\"",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-osx-demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "mynt-osx-demo/mynt-osx-demo-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -557,15 +420,6 @@
 			buildConfigurations = (
 				A98E915B1CCC594200670FBA /* Debug */,
 				A98E915C1CCC594200670FBA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A98E916D1CCC595500670FBA /* Build configuration list for PBXNativeTarget "mynt-osx-demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A98E916B1CCC595500670FBA /* Debug */,
-				A98E916C1CCC595500670FBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

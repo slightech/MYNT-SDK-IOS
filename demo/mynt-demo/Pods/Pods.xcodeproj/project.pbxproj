@@ -7,91 +7,114 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		105AC3681EBF88828C8F2F027FF27F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
-		56F2F02A67FB4BDA950DA1244D0DEF3D /* Pods-mynt-osx-demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D7703D5EAD67BC6E4AC9F4202A32 /* Pods-mynt-osx-demo-dummy.m */; };
+		1BD0E982E845FBE5528BDED3DB9F975B /* Pods-mynt-ios-demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DACBE7A6A4590CDAB763A9B33CEEC5A9 /* Pods-mynt-ios-demo-dummy.m */; };
+		A16C4D9C1BEEF885E9090C9AF7174623 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0CD6AE5174C49802812EEA9BF2326CBC /* Pods-mynt-osx-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mynt-osx-demo.release.xcconfig"; sourceTree = "<group>"; };
-		1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		2A1DA3849D80AB5D744667C5893C45DC /* STMynt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STMynt.h; path = "MYNT-SDK-IOS/STMynt.h"; sourceTree = "<group>"; };
 		2E8DEC8F7DE8CB6D3158A393D53EAD5E /* STConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STConstants.h; path = "MYNT-SDK-IOS/STConstants.h"; sourceTree = "<group>"; };
-		448C1C3912981937D3F7A32D8A99A0ED /* Pods-mynt-osx-demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-osx-demo-frameworks.sh"; sourceTree = "<group>"; };
-		5EA267A2F607178E0553601C5D01BDFD /* Pods-mynt-osx-demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mynt-osx-demo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7861EE961BF4DC26187CD8FA639791DA /* Pods-mynt-osx-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mynt-osx-demo-acknowledgements.plist"; sourceTree = "<group>"; };
+		678C0B87E24BA826680F22DE936AAA00 /* Pods-mynt-ios-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mynt-ios-demo.release.xcconfig"; sourceTree = "<group>"; };
+		6F0D46EF2EAD7FF644515AFF01FAAFC7 /* Pods-mynt-ios-demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-ios-demo-resources.sh"; sourceTree = "<group>"; };
+		721D9A0DEF629A047FBA276FF68C8400 /* Pods-mynt-ios-demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mynt-ios-demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		830550F2ED644FC1F00C7FD67CBC32EC /* STMyntBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STMyntBluetooth.h; path = "MYNT-SDK-IOS/STMyntBluetooth.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B2C3D7703D5EAD67BC6E4AC9F4202A32 /* Pods-mynt-osx-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mynt-osx-demo-dummy.m"; sourceTree = "<group>"; };
-		BD3B67136BABDAF4C68A5FC79D194426 /* libPods-mynt-osx-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-osx-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFA0DF131AD06BF59B0C42D41FF7BD19 /* Pods-mynt-osx-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mynt-osx-demo.debug.xcconfig"; sourceTree = "<group>"; };
-		D2D78D1C2B96049E8E0289A38AF21794 /* Pods-mynt-osx-demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-osx-demo-resources.sh"; sourceTree = "<group>"; };
-		F5B878B9749F26243EC8BD58C249D803 /* libSTMyntBluetooth.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSTMyntBluetooth.a; path = "MYNT-SDK-IOS/osx/libSTMyntBluetooth.a"; sourceTree = "<group>"; };
+		946E704FF016D5B66DE3F01D0E45BB98 /* Pods-mynt-ios-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mynt-ios-demo-acknowledgements.plist"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DACBE7A6A4590CDAB763A9B33CEEC5A9 /* Pods-mynt-ios-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mynt-ios-demo-dummy.m"; sourceTree = "<group>"; };
+		DF68FB911E1DB1D14E635759081C097C /* libSTMyntBluetooth.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSTMyntBluetooth.a; path = "MYNT-SDK-IOS/ios/libSTMyntBluetooth.a"; sourceTree = "<group>"; };
+		FD453E6BDB9B6043EE79BC8C2AE48B62 /* Pods-mynt-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mynt-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		FD5C386960D69F61CA1D18B9BE9B6D20 /* Pods-mynt-ios-demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-ios-demo-frameworks.sh"; sourceTree = "<group>"; };
+		FD79C72A00B8A550ECE931F9C6AA49FF /* libPods-mynt-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		819E1A74B7BC18FBB789EE1509EDEFCA /* Frameworks */ = {
+		4B61BCE4D03B80082ADE2A1BAB4C6F4A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				105AC3681EBF88828C8F2F027FF27F39 /* Cocoa.framework in Frameworks */,
+				A16C4D9C1BEEF885E9090C9AF7174623 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		117F231527A5F6C5411A3791B14F2CA3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F5B878B9749F26243EC8BD58C249D803 /* libSTMyntBluetooth.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		28C17CEF104526ACA07B6EEE217EC43E /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
 		398029247907C9CABE5EB39D23A2F061 /* MYNT-SDK-IOS */ = {
 			isa = PBXGroup;
 			children = (
 				2E8DEC8F7DE8CB6D3158A393D53EAD5E /* STConstants.h */,
 				2A1DA3849D80AB5D744667C5893C45DC /* STMynt.h */,
 				830550F2ED644FC1F00C7FD67CBC32EC /* STMyntBluetooth.h */,
-				117F231527A5F6C5411A3791B14F2CA3 /* Frameworks */,
+				72624C3A9B58B0BA73B0D47B162E25BA /* Frameworks */,
 			);
 			path = "MYNT-SDK-IOS";
 			sourceTree = "<group>";
 		};
-		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				28C17CEF104526ACA07B6EEE217EC43E /* OS X */,
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5C6616B532C99CA1CFE0CB53D1DCC685 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C81C33EC71C6299EAA05D37A1BE94F3 /* Pods-mynt-ios-demo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5C81C33EC71C6299EAA05D37A1BE94F3 /* Pods-mynt-ios-demo */ = {
+			isa = PBXGroup;
+			children = (
+				721D9A0DEF629A047FBA276FF68C8400 /* Pods-mynt-ios-demo-acknowledgements.markdown */,
+				946E704FF016D5B66DE3F01D0E45BB98 /* Pods-mynt-ios-demo-acknowledgements.plist */,
+				DACBE7A6A4590CDAB763A9B33CEEC5A9 /* Pods-mynt-ios-demo-dummy.m */,
+				FD5C386960D69F61CA1D18B9BE9B6D20 /* Pods-mynt-ios-demo-frameworks.sh */,
+				6F0D46EF2EAD7FF644515AFF01FAAFC7 /* Pods-mynt-ios-demo-resources.sh */,
+				FD453E6BDB9B6043EE79BC8C2AE48B62 /* Pods-mynt-ios-demo.debug.xcconfig */,
+				678C0B87E24BA826680F22DE936AAA00 /* Pods-mynt-ios-demo.release.xcconfig */,
+			);
+			name = "Pods-mynt-ios-demo";
+			path = "Target Support Files/Pods-mynt-ios-demo";
+			sourceTree = "<group>";
+		};
+		72624C3A9B58B0BA73B0D47B162E25BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF68FB911E1DB1D14E635759081C097C /* libSTMyntBluetooth.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75F9036673611D7A7A6BC786F070CCF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD79C72A00B8A550ECE931F9C6AA49FF /* libPods-mynt-ios-demo.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				E28619FA4AC71C31F193233F2A6CCB83 /* Pods */,
-				BB8243F3EC6B88A8D47999DBCC8E9D84 /* Products */,
-				FA1E57457206980688DB3C16ABC4ED27 /* Targets Support Files */,
+				75F9036673611D7A7A6BC786F070CCF4 /* Products */,
+				5C6616B532C99CA1CFE0CB53D1DCC685 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		BB8243F3EC6B88A8D47999DBCC8E9D84 /* Products */ = {
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BD3B67136BABDAF4C68A5FC79D194426 /* libPods-mynt-osx-demo.a */,
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E28619FA4AC71C31F193233F2A6CCB83 /* Pods */ = {
@@ -102,46 +125,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F3810B681B4815670364FE6640395C6C /* Pods-mynt-osx-demo */ = {
-			isa = PBXGroup;
-			children = (
-				5EA267A2F607178E0553601C5D01BDFD /* Pods-mynt-osx-demo-acknowledgements.markdown */,
-				7861EE961BF4DC26187CD8FA639791DA /* Pods-mynt-osx-demo-acknowledgements.plist */,
-				B2C3D7703D5EAD67BC6E4AC9F4202A32 /* Pods-mynt-osx-demo-dummy.m */,
-				448C1C3912981937D3F7A32D8A99A0ED /* Pods-mynt-osx-demo-frameworks.sh */,
-				D2D78D1C2B96049E8E0289A38AF21794 /* Pods-mynt-osx-demo-resources.sh */,
-				BFA0DF131AD06BF59B0C42D41FF7BD19 /* Pods-mynt-osx-demo.debug.xcconfig */,
-				0CD6AE5174C49802812EEA9BF2326CBC /* Pods-mynt-osx-demo.release.xcconfig */,
-			);
-			name = "Pods-mynt-osx-demo";
-			path = "Target Support Files/Pods-mynt-osx-demo";
-			sourceTree = "<group>";
-		};
-		FA1E57457206980688DB3C16ABC4ED27 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F3810B681B4815670364FE6640395C6C /* Pods-mynt-osx-demo */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		45DF255BFE8B62E1A6112A95F8820988 /* Pods-mynt-osx-demo */ = {
+		B8176497D50F635B74A59C58BA280F0C /* Pods-mynt-ios-demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96565A64870FED72C4840DA461FC2427 /* Build configuration list for PBXNativeTarget "Pods-mynt-osx-demo" */;
+			buildConfigurationList = 00F4CDFEE4EA15EC8AFC5ED8A228372F /* Build configuration list for PBXNativeTarget "Pods-mynt-ios-demo" */;
 			buildPhases = (
-				B18D2797115D0996D3F1E351D2A0E4A6 /* Sources */,
-				819E1A74B7BC18FBB789EE1509EDEFCA /* Frameworks */,
+				11A3DF99A845C9133BCF0F32F40805EC /* Sources */,
+				4B61BCE4D03B80082ADE2A1BAB4C6F4A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-mynt-osx-demo";
-			productName = "Pods-mynt-osx-demo";
-			productReference = BD3B67136BABDAF4C68A5FC79D194426 /* libPods-mynt-osx-demo.a */;
+			name = "Pods-mynt-ios-demo";
+			productName = "Pods-mynt-ios-demo";
+			productReference = FD79C72A00B8A550ECE931F9C6AA49FF /* libPods-mynt-ios-demo.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -161,28 +161,28 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = BB8243F3EC6B88A8D47999DBCC8E9D84 /* Products */;
+			productRefGroup = 75F9036673611D7A7A6BC786F070CCF4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45DF255BFE8B62E1A6112A95F8820988 /* Pods-mynt-osx-demo */,
+				B8176497D50F635B74A59C58BA280F0C /* Pods-mynt-ios-demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B18D2797115D0996D3F1E351D2A0E4A6 /* Sources */ = {
+		11A3DF99A845C9133BCF0F32F40805EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56F2F02A67FB4BDA950DA1244D0DEF3D /* Pods-mynt-osx-demo-dummy.m in Sources */,
+				1BD0E982E845FBE5528BDED3DB9F975B /* Pods-mynt-ios-demo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		035055281C2FB9A64FC820303DC9EFDF /* Release */ = {
+		79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -200,6 +200,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -213,58 +214,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		0C8B9F546502F3A9B6719B698B47E363 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFA0DF131AD06BF59B0C42D41FF7BD19 /* Pods-mynt-osx-demo.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_NO_COMMON_BLOCKS = YES;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6BDB1F02B1733F3B1A371E7696642350 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CD6AE5174C49802812EEA9BF2326CBC /* Pods-mynt-osx-demo.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_NO_COMMON_BLOCKS = YES;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		DC9E4240B07ECBF69DD3DA1D3B614ED4 /* Debug */ = {
+		CF7953F66E785E8876EB4D370D777D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -282,6 +240,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -299,30 +258,73 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
+		E0BF038DBDA37B0726DA5C3AFAA15C01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD453E6BDB9B6043EE79BC8C2AE48B62 /* Pods-mynt-ios-demo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EF93D868AA7C4029AE9AF72EDA34DF05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 678C0B87E24BA826680F22DE936AAA00 /* Pods-mynt-ios-demo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		00F4CDFEE4EA15EC8AFC5ED8A228372F /* Build configuration list for PBXNativeTarget "Pods-mynt-ios-demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC9E4240B07ECBF69DD3DA1D3B614ED4 /* Debug */,
-				035055281C2FB9A64FC820303DC9EFDF /* Release */,
+				E0BF038DBDA37B0726DA5C3AFAA15C01 /* Debug */,
+				EF93D868AA7C4029AE9AF72EDA34DF05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96565A64870FED72C4840DA461FC2427 /* Build configuration list for PBXNativeTarget "Pods-mynt-osx-demo" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C8B9F546502F3A9B6719B698B47E363 /* Debug */,
-				6BDB1F02B1733F3B1A371E7696642350 /* Release */,
+				CF7953F66E785E8876EB4D370D777D50 /* Debug */,
+				79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
