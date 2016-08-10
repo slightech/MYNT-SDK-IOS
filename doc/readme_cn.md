@@ -253,6 +253,7 @@ mynt?.writeControlMode(.Music)
 > 单独设置小觅的点击事件
 > 
 > ⚠️: 如果设置了点击事件，小觅的控制模式将自动切换为Custom
+>
 > ⚠️: 当且仅当小觅的Controlmode是Custom时，并且eventValue也是Custom时，当用户点击小觅上的按钮时，才会通过``mynt:didReceiveClickEvent:``通知你是单击事件or其他事件。
 
 ```
@@ -263,6 +264,7 @@ mynt?.writeClickValue(.Click, eventValue: .MusicNext)
 > 同时设置小觅的5个点击事件
 > 
 > ⚠️: 如果设置了点击事件，小觅的控制模式将自动切换为Custom
+>
 > ⚠️: 当且仅当小觅的Controlmode是Custom时，并且eventValue也是Custom时，当用户点击小觅上的按钮时，才会通过``mynt:didReceiveClickEvent:``通知你是单击事件or其他事件。
 
 ```
