@@ -158,4 +158,14 @@
                                           MYNTClickValue hold,
                                           MYNTClickValue clickHold))handler;
 
+/**
+ *  Update the firmware of the mynt
+ *
+ *  @param
+ */
+- (void)updateFirmware:(NSData * _Nullable (^ _Nullable)())start
+              progress:(void (^ _Nullable)(CGFloat))progress
+               success:(void (^ _Nullable)())success
+               failure:(void (^ _Nullable)(MYNTOADError))failure;
+
 @end
