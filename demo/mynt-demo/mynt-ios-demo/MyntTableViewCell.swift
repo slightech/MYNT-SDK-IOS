@@ -17,9 +17,9 @@ class MyntTableViewCell: UITableViewCell {
     var discovered: Bool = true {
         didSet {
             if discovered != oldValue {
-                snLabel.textColor = discovered ? UIColor.blackColor() : UIColor.lightGrayColor()
-                rssiLabel.textColor = discovered ? UIColor.blackColor() : UIColor.lightGrayColor()
-                nameLabel.textColor = discovered ? UIColor.blackColor() : UIColor.lightGrayColor()
+                snLabel.textColor = discovered ? UIColor.black : UIColor.lightGray
+                rssiLabel.textColor = discovered ? UIColor.black : UIColor.lightGray
+                nameLabel.textColor = discovered ? UIColor.black : UIColor.lightGray
             }
         }
     }
@@ -28,7 +28,7 @@ class MyntTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

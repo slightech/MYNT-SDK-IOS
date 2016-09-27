@@ -128,6 +128,16 @@ typedef NS_ENUM(NSInteger, MYNTState) {
  */
 - (BOOL)myntBluetooth:(STMyntBluetooth * _Nonnull)myntBluetooth didFilterMyntWithSn:(NSString * _Nonnull)sn;
 
+/**
+ *  Invoked if sdk print log.
+ *
+ *  @param myntBluetooth
+ *  @param sn            the sn of the mynt when the mynt is discoverd.
+ *
+ *  @return if this mynt need filter(don't ues it), so you can need true.
+ */
+- (void)myntBluetooth:(STMyntBluetooth * _Nonnull)myntBluetooth didPrintLog:(NSString * _Nonnull)log;
+
 @end
 
 // MARK: =======================STMyntDelegate=======================

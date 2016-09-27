@@ -20,7 +20,7 @@ class MyntTableViewController: UIViewController {
         
         self.title = "Search MYNTs"
         
-        tableView.registerNib(UINib(nibName: "MyntTableViewCell", bundle: nil), forCellReuseIdentifier: "MyntTableViewCell")
+        tableView.register(UINib(nibName: "MyntTableViewCell", bundle: nil), forCellReuseIdentifier: "MyntTableViewCell")
         tableView.tableFooterView = UIView()
         
         // init bluetooth
@@ -35,7 +35,7 @@ class MyntTableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func clickResearch(sender: AnyObject) {
+    @IBAction func clickResearch(_ sender: AnyObject) {
         mynts = []
         tableView.reloadData()
         
@@ -46,11 +46,11 @@ class MyntTableViewController: UIViewController {
 
 extension MyntTableViewController: STMyntBluetoothDelegate {
     
-    func myntBluetooth(myntBluetooth: STMyntBluetooth, didUpdateState state: CBCentralManagerState) {
+    func myntBluetooth(_ myntBluetooth: STMyntBluetooth, didUpdate state: CBCentralManagerState) {
         
     }
     
-    func myntBluetooth(myntBluetooth: STMyntBluetooth, didDiscoverMynt mynt: STMynt) {
+    func myntBluetooth(_ myntBluetooth: STMyntBluetooth, didDiscover mynt: STMynt) {
 //        if !mynt.sn.hasPrefix("98") {
 //            return
 //        }
@@ -60,7 +60,7 @@ extension MyntTableViewController: STMyntBluetoothDelegate {
         tableView.reloadData()
     }
     
-    func myntBluetooth(myntBluetooth: STMyntBluetooth, didDiscoverTimeoutMynt mynt: STMynt) {
+    func myntBluetooth(_ myntBluetooth: STMyntBluetooth, didDiscoverTimeoutMynt mynt: STMynt) {
         tableView.reloadData()
     }
     
@@ -74,34 +74,34 @@ extension MyntTableViewController: STMyntBluetoothDelegate {
 
 extension MyntTableViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mynts.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MyntTableViewCell", forIndexPath: indexPath) as? MyntTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyntTableViewCell", for: indexPath) as? MyntTableViewCell
         
-        let mynt = mynts[indexPath.row]
+        let mynt = mynts[(indexPath as NSIndexPath).row]
         cell?.snLabel?.text = "\(mynt.sn)"
         cell?.nameLabel?.text = "\(mynt.name)"
-        cell?.rssiLabel?.text = "RSSI: \(mynt.RSSI)"
+        cell?.rssiLabel?.text = "RSSI: \(mynt.rssi)"
         cell?.discovered = mynt.isDiscovering
         
         return cell!
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         
-        let mynt = mynts[indexPath.row]
+        let mynt = mynts[(indexPath as NSIndexPath).row]
         if mynt.isDiscovering {
             let viewController = MyntViewController()
             
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Done, target: nil, action: nil)
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.done, target: nil, action: nil)
             viewController.mynt = mynt
             viewController.title = mynt.sn
             self.navigationController?.pushViewController(viewController, animated: true)

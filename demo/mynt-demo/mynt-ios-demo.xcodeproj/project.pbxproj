@@ -162,6 +162,7 @@
 					A98E91471CCC594200670FBA = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 74UTGGD74F;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -384,6 +385,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mynt-ios-demo/mynt-ios-demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -400,6 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.slighech.mynt-ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mynt-ios-demo/mynt-ios-demo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

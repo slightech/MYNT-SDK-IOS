@@ -12,15 +12,15 @@ extension MYNTControlMode {
     
     var name: String {
         switch self {
-        case .Music:
+        case .music:
             return "Music"
-        case .Camera:
+        case .camera:
             return "Camera"
         case .PPT:
             return "PPT"
-        case .Custom:
+        case .custom:
             return "Custom"
-        case .Default:
+        case .default:
             return "Default"
         default:
             return ""
@@ -32,15 +32,15 @@ extension MYNTClickEvent {
     
     var name: String {
         switch self {
-        case .Click:
+        case .click:
             return "Click"
-        case .DoubleClick:
+        case .doubleClick:
             return "DoubleClick"
-        case .TripleClick:
+        case .tripleClick:
             return "TripleClick"
-        case .Hold:
+        case .hold:
             return "Hold"
-        case .ClickHold:
+        case .clickHold:
             return "ClickHold"
         default:
             return ""
@@ -52,29 +52,29 @@ extension MYNTClickValue {
     
     var name: String {
         switch self {
-        case .MusicPlay:
+        case .musicPlay:
             return "MusicPlay"
-        case .MusicNext:
+        case .musicNext:
             return "MusicNext"
-        case .MusicPrevious:
+        case .musicPrevious:
             return "MusicPrevious"
-        case .MusicVolumeUp:
+        case .musicVolumeUp:
             return "MusicVolumeUp"
-        case .MusicVolumeDown:
+        case .musicVolumeDown:
             return "MusicVolumeDown"
-        case .CameraShutter:
+        case .cameraShutter:
             return "CameraShutter"
-        case .CameraBurst:
+        case .cameraBurst:
             return "CameraBurst"
-        case .PPTExit:
+        case .pptExit:
             return "PPTExit"
-        case .PPTNextPage:
+        case .pptNextPage:
             return "PPTNextPage"
-        case .PPTPreviousPage:
+        case .pptPreviousPage:
             return "PPTPreviousPage"
-        case .CustomClick:
+        case .customClick:
             return "CustomClick"
-        case .None:
+        case .none:
             return "None"
         default:
             return ""
@@ -83,13 +83,13 @@ extension MYNTClickValue {
     
 }
 
-extension NSDate {
+extension Date {
     
-    class func currentTimeString() -> String {
-        let date = NSDate()
-        let formatter = NSDateFormatter()
+    static func currentTimeString() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss:sss"
-        return formatter.stringFromDate(date)
+        return formatter.string(from: date)
     }
     
 }
@@ -101,10 +101,10 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
     let WriteClickEventTag = 10002
     let WriteClickValueTag = 10003
     
-    let ControlModes: [MYNTControlMode] = [.Music, .Camera, .PPT, .Custom]
-    let ClickEvents: [MYNTClickEvent] = [.Click, .DoubleClick, .TripleClick, .Hold, .ClickHold]
-    let EventValues: [MYNTClickValue] = [.MusicPlay, .MusicNext, .MusicPrevious, .MusicVolumeUp, .MusicVolumeDown,
-                                         .CameraShutter, .CameraBurst, .PPTExit, .PPTNextPage, .PPTPreviousPage, .CustomClick, .None]
+    let ControlModes: [MYNTControlMode] = [.music, .camera, .PPT, .custom]
+    let ClickEvents: [MYNTClickEvent] = [.click, .doubleClick, .tripleClick, .hold, .clickHold]
+    let EventValues: [MYNTClickValue] = [.musicPlay, .musicNext, .musicPrevious, .musicVolumeUp, .musicVolumeDown,
+                                         .cameraShutter, .cameraBurst, .pptExit, .pptNextPage, .pptPreviousPage, .customClick, .none]
     
     weak var mynt: STMynt?
     
@@ -116,7 +116,7 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
         
         logView.layoutManager.allowsNonContiguousLayout = false
         
-        rightBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.Done, target: self, action: #selector(MyntViewController._clickMenu(_:)))
+        rightBarButtonItem = UIBarButtonItem(title: "Menu", style: UIBarButtonItemStyle.done, target: self, action: #selector(MyntViewController._clickMenu(_:)))
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
 
         mynt?.delegate = self
@@ -140,29 +140,29 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
         mynt?.disconnect()
     }
     
-    func addLogInfo(mynt mynt: STMynt?, msg: String) {
+    func addLogInfo(mynt: STMynt?, msg: String) {
         if self.mynt != mynt {
             return
         }
-        logView.text = logView.text + "\(NSDate.currentTimeString()) \t\(msg)\n"
+        logView.text = logView.text + "\(Date.currentTimeString()) \t\(msg)\n"
         logView.scrollRangeToVisible(NSRange(location: logView.text.characters.count - 1, length: 1))
     }
     
-    @objc private func _clickMenu(sender: AnyObject) {
+    @objc fileprivate func _clickMenu(_ sender: AnyObject) {
         let menuAlert = UIAlertView(title: "select action", message: nil, delegate: self, cancelButtonTitle: "Cancel")
         menuAlert.tag = MenuAlertTag
-        menuAlert.addButtonWithTitle("Toggle alarm")
-        menuAlert.addButtonWithTitle("Read battery")
-        menuAlert.addButtonWithTitle("Read deviceInfo")
-        menuAlert.addButtonWithTitle("Read control mode")
-        menuAlert.addButtonWithTitle("Send control mode")
-        menuAlert.addButtonWithTitle("Read click event")
-        menuAlert.addButtonWithTitle("Send click event")
-        menuAlert.addButtonWithTitle("Clean log")
+        menuAlert.addButton(withTitle: "Toggle alarm")
+        menuAlert.addButton(withTitle: "Read battery")
+        menuAlert.addButton(withTitle: "Read deviceInfo")
+        menuAlert.addButton(withTitle: "Read control mode")
+        menuAlert.addButton(withTitle: "Send control mode")
+        menuAlert.addButton(withTitle: "Read click event")
+        menuAlert.addButton(withTitle: "Send click event")
+        menuAlert.addButton(withTitle: "Clean log")
         menuAlert.show()
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == 0 {
             return
         }
@@ -178,22 +178,22 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
                     })
             case 3:
                 self.addLogInfo(mynt: mynt, msg: "")
-                mynt?.readMyntInfo(MYNTInfoType.Firmware, handler: { [weak self](info) in
+                mynt?.read(MYNTInfoType.firmware, handler: { [weak self](info) in
                     self?.addLogInfo(mynt: self?.mynt, msg: "firmware -> \(info)")
                     })
-                mynt?.readMyntInfo(MYNTInfoType.Hardware, handler: { [weak self](info) in
+                mynt?.read(MYNTInfoType.hardware, handler: { [weak self](info) in
                     self?.addLogInfo(mynt: self?.mynt, msg: "hardware -> \(info)")
                     })
-                mynt?.readMyntInfo(MYNTInfoType.Software, handler: { [weak self](info) in
+                mynt?.read(MYNTInfoType.software, handler: { [weak self](info) in
                     self?.addLogInfo(mynt: self?.mynt, msg: "software -> \(info)")
                     })
-                mynt?.readMyntInfo(MYNTInfoType.Model, handler: { [weak self](info) in
+                mynt?.read(MYNTInfoType.model, handler: { [weak self](info) in
                     self?.addLogInfo(mynt: self?.mynt, msg: "model -> \(info)")
                     })
-                mynt?.readMyntInfo(MYNTInfoType.Sn, handler: { [weak self](info) in
+                mynt?.read(MYNTInfoType.sn, handler: { [weak self](info) in
                     self?.addLogInfo(mynt: self?.mynt, msg: "sn -> \(info)")
                     })
-                mynt?.readMyntInfo(MYNTInfoType.Manufaturer, handler: { [weak self](info) in
+                mynt?.read(MYNTInfoType.manufaturer, handler: { [weak self](info) in
                     self?.addLogInfo(mynt: self?.mynt, msg: "manufaturer -> \(info)")
                     })
             case 4:
@@ -234,12 +234,12 @@ class MyntViewController: UIViewController, UIAlertViewDelegate {
         }
     }
     
-    var currentClickEvent = MYNTClickEvent.Click
-    func showAlart(title: String, tag: Int, items: [String]) {
+    var currentClickEvent = MYNTClickEvent.click
+    func showAlart(_ title: String, tag: Int, items: [String]) {
         let alertView = UIAlertView(title: title, message: nil, delegate: self, cancelButtonTitle: "Cancel")
         alertView.tag = tag
         for item in items {
-            alertView.addButtonWithTitle(item)
+            alertView.addButton(withTitle: item)
         }
         alertView.show()
     }
@@ -266,47 +266,47 @@ extension MyntViewController: STMyntDelegate {
         }
     }
     
-    func myntDidStartConnect(mynt: STMynt) {
+    func myntDidStartConnect(_ mynt: STMynt) {
         addLogInfo(mynt: mynt, msg: "|--- myntDidStartConnect ---|")
     }
     
-    func myntDidConnected(mynt: STMynt) {
+    func myntDidConnected(_ mynt: STMynt) {
         addLogInfo(mynt: mynt, msg: "|--- myntDidConnected ---|")
         connectSuccessHandler()
     }
     
-    func mynt(mynt: STMynt, didConnectFailed error: NSError?) {
+    func mynt(_ mynt: STMynt, didConnectFailed error: NSError?) {
         addLogInfo(mynt: mynt, msg: "didConnectFailed \(error)")
     }
     
-    func mynt(mynt: STMynt, didDisconnected error: NSError?) {
+    func mynt(_ mynt: STMynt, didDisconnected error: NSError?) {
         addLogInfo(mynt: mynt, msg: "didDisconnected \(error)")
     }
     
-    func mynt(mynt: STMynt, didUpdateRSSI RSSI: Int) {
-        if let sn = self.mynt?.sn where self.mynt == mynt {
+    func mynt(_ mynt: STMynt, didUpdateRSSI RSSI: Int) {
+        if let sn = self.mynt?.sn , self.mynt == mynt {
             self.title = "\(sn)[\(RSSI)]"
         }
     }
     
-    func mynt(mynt: STMynt, didUpdateBattery battery: Int) {
+    func mynt(_ mynt: STMynt, didUpdateBattery battery: Int) {
         addLogInfo(mynt: mynt, msg: "didUpdateBattery \(battery)")
     }
     
-    func mynt(mynt: STMynt, didUpdateAlarmState alarmState: Bool) {
+    func mynt(_ mynt: STMynt, didUpdateAlarmState alarmState: Bool) {
         addLogInfo(mynt: mynt, msg: "alarmState \(alarmState)")
     }
     
-    func mynt(mynt: STMynt, didReceiveClickEvent clickEvent: MYNTClickEvent) {
+    func mynt(_ mynt: STMynt, didReceive clickEvent: MYNTClickEvent) {
         addLogInfo(mynt: mynt, msg: "didReceiveClickEvent \(clickEvent.name)")
     }
     
-    func didRequestAutoconnect(mynt: STMynt) -> Bool {
+    func didRequestAutoconnect(_ mynt: STMynt) -> Bool {
         // 是否需要自动重连
         return true
     }
     
-    func didNeedRestartBluetooth(mynt: STMynt) {
+    func didNeedRestartBluetooth(_ mynt: STMynt) {
         // 连接异常时  回调此方法 通知需要重启蓝牙
     }
     
