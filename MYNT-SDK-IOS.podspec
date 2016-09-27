@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
   s.osx.preserve_path = 'MYNT-SDK-IOS/osx/libSTMyntBluetooth.a'
   s.osx.vendored_libraries = 'MYNT-SDK-IOS/osx/libSTMyntBluetooth.a'
-  s.osx.frameworks = 'IOBluetooth'
+  s.osx.frameworks = 'CoreBluetooth'
 
   s.source_files = 'MYNT-SDK-IOS/*.h'
 
