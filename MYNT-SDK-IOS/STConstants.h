@@ -62,7 +62,8 @@ typedef NS_ENUM(NSInteger, MYNTInfoType) {
 
 typedef NS_ENUM(NSInteger, MYNTHardwareType) {
     MYNTHardwareTypeCC25XX = 0x00,
-    MYNTHardwareTypeCC26XX = 0x01
+    MYNTHardwareTypeCC26XX = 0x01,
+    MYNTHardwareTypeCC26GPS = 0x02
 };
 
 typedef NS_ENUM(NSInteger, MYNTFirmwareType) {
