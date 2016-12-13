@@ -14,6 +14,7 @@ class MyntTableViewController: UIViewController {
     
     var myntBluetooth: STMyntBluetooth?
     var mynts = [STMynt]()
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class MyntTableViewController: UIViewController {
     @IBAction func clickResearch(_ sender: AnyObject) {
         mynts = []
         tableView.reloadData()
+        label.text = "size: \(mynts.count)"
         
         myntBluetooth?.startScan()
     }
@@ -58,10 +60,12 @@ extension MyntTableViewController: STMyntBluetoothDelegate {
             mynts.append(mynt)
         }
         tableView.reloadData()
+        label.text = "size: \(mynts.count)"
     }
     
     func myntBluetooth(_ myntBluetooth: STMyntBluetooth, didDiscoverTimeoutMynt mynt: STMynt) {
         tableView.reloadData()
+        label.text = "size: \(mynts.count)"
     }
     
 //    func myntBluetooth(myntBluetooth: STMyntBluetooth, didFilterMyntWithSn sn: String) -> Bool {

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BD0E982E845FBE5528BDED3DB9F975B /* Pods-mynt-ios-demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DACBE7A6A4590CDAB763A9B33CEEC5A9 /* Pods-mynt-ios-demo-dummy.m */; };
-		A16C4D9C1BEEF885E9090C9AF7174623 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		46A135D44EBD3B3C104AAE55A45A25E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		C5FAB8A2A0D3F589AB281A41E0E62129 /* Pods-mynt-ios-demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DACBE7A6A4590CDAB763A9B33CEEC5A9 /* Pods-mynt-ios-demo-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,22 +18,22 @@
 		6F0D46EF2EAD7FF644515AFF01FAAFC7 /* Pods-mynt-ios-demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-ios-demo-resources.sh"; sourceTree = "<group>"; };
 		721D9A0DEF629A047FBA276FF68C8400 /* Pods-mynt-ios-demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mynt-ios-demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		830550F2ED644FC1F00C7FD67CBC32EC /* STMyntBluetooth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STMyntBluetooth.h; path = "MYNT-SDK-IOS/STMyntBluetooth.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		946E704FF016D5B66DE3F01D0E45BB98 /* Pods-mynt-ios-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mynt-ios-demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DACBE7A6A4590CDAB763A9B33CEEC5A9 /* Pods-mynt-ios-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mynt-ios-demo-dummy.m"; sourceTree = "<group>"; };
 		DF68FB911E1DB1D14E635759081C097C /* libSTMyntBluetooth.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libSTMyntBluetooth.a; path = "MYNT-SDK-IOS/ios/libSTMyntBluetooth.a"; sourceTree = "<group>"; };
 		FD453E6BDB9B6043EE79BC8C2AE48B62 /* Pods-mynt-ios-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mynt-ios-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		FD5C386960D69F61CA1D18B9BE9B6D20 /* Pods-mynt-ios-demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mynt-ios-demo-frameworks.sh"; sourceTree = "<group>"; };
-		FD79C72A00B8A550ECE931F9C6AA49FF /* libPods-mynt-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mynt-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD79C72A00B8A550ECE931F9C6AA49FF /* libPods-mynt-ios-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-mynt-ios-demo.a"; path = "libPods-mynt-ios-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4B61BCE4D03B80082ADE2A1BAB4C6F4A /* Frameworks */ = {
+		EFB238EB193759F8895571AD027ABF83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A16C4D9C1BEEF885E9090C9AF7174623 /* Foundation.framework in Frameworks */,
+				46A135D44EBD3B3C104AAE55A45A25E5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,15 +48,8 @@
 				830550F2ED644FC1F00C7FD67CBC32EC /* STMyntBluetooth.h */,
 				72624C3A9B58B0BA73B0D47B162E25BA /* Frameworks */,
 			);
+			name = "MYNT-SDK-IOS";
 			path = "MYNT-SDK-IOS";
-			sourceTree = "<group>";
-		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		5C6616B532C99CA1CFE0CB53D1DCC685 /* Targets Support Files */ = {
@@ -90,6 +83,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		75F9036673611D7A7A6BC786F070CCF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +113,7 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,12 +129,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B8176497D50F635B74A59C58BA280F0C /* Pods-mynt-ios-demo */ = {
+		C4B3B4CE0DD341832C7B8113CDB451F3 /* Pods-mynt-ios-demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00F4CDFEE4EA15EC8AFC5ED8A228372F /* Build configuration list for PBXNativeTarget "Pods-mynt-ios-demo" */;
+			buildConfigurationList = 621B725216C66AA4B92C24CD645DCAE9 /* Build configuration list for PBXNativeTarget "Pods-mynt-ios-demo" */;
 			buildPhases = (
-				11A3DF99A845C9133BCF0F32F40805EC /* Sources */,
-				4B61BCE4D03B80082ADE2A1BAB4C6F4A /* Frameworks */,
+				DEF8FEFF6530F28F4D7DA61F82863977 /* Sources */,
+				EFB238EB193759F8895571AD027ABF83 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,23 +166,46 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8176497D50F635B74A59C58BA280F0C /* Pods-mynt-ios-demo */,
+				C4B3B4CE0DD341832C7B8113CDB451F3 /* Pods-mynt-ios-demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		11A3DF99A845C9133BCF0F32F40805EC /* Sources */ = {
+		DEF8FEFF6530F28F4D7DA61F82863977 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD0E982E845FBE5528BDED3DB9F975B /* Pods-mynt-ios-demo-dummy.m in Sources */,
+				C5FAB8A2A0D3F589AB281A41E0E62129 /* Pods-mynt-ios-demo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		5F148C747D990B86F81C279F81B9A69B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD453E6BDB9B6043EE79BC8C2AE48B62 /* Pods-mynt-ios-demo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -266,32 +290,13 @@
 			};
 			name = Debug;
 		};
-		E0BF038DBDA37B0726DA5C3AFAA15C01 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD453E6BDB9B6043EE79BC8C2AE48B62 /* Pods-mynt-ios-demo.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		EF93D868AA7C4029AE9AF72EDA34DF05 /* Release */ = {
+		D9007DA5045E4EE958BA4C4E15ECCEAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 678C0B87E24BA826680F22DE936AAA00 /* Pods-mynt-ios-demo.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -311,20 +316,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00F4CDFEE4EA15EC8AFC5ED8A228372F /* Build configuration list for PBXNativeTarget "Pods-mynt-ios-demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E0BF038DBDA37B0726DA5C3AFAA15C01 /* Debug */,
-				EF93D868AA7C4029AE9AF72EDA34DF05 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF7953F66E785E8876EB4D370D777D50 /* Debug */,
 				79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		621B725216C66AA4B92C24CD645DCAE9 /* Build configuration list for PBXNativeTarget "Pods-mynt-ios-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F148C747D990B86F81C279F81B9A69B /* Debug */,
+				D9007DA5045E4EE958BA4C4E15ECCEAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
