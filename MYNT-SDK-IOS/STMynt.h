@@ -11,21 +11,25 @@
 
 @interface STMynt : NSObject
 
+@property (nonatomic, weak, nullable) id<STMyntDelegate> delegate;
+
 // The name of the mynt
 @property (nonatomic, strong, readonly, nonnull) NSString *name;
 // The current RSSI of peripheral, in dBm. A value of 127is reserved and indicates the RSSI
-@property (nonatomic, assign) NSInteger RSSI;
-// FirmwareType (BLE | HID)
-@property (nonatomic, assign, readonly) MYNTFirmwareType firmwareType;
-// HardwareType (CC25 | CC26)
+@property (nonatomic, assign, readonly) NSInteger RSSI;
+// Battery of the mynt
+@property (nonatomic, assign, readonly) NSInteger battery;
+// Flag to determine the mynt is discovering or not
+@property (nonatomic, assign, readonly) BOOL isDiscovering;
+// HardwareType (MYNTV1 | MYNTV2 | MYNTGPS )
 @property (nonatomic, assign, readonly) MYNTHardwareType hardwareType;
 // The current connection state of the mynt
 @property (nonatomic, assign, readonly) MYNTState state;
+// The current connection state of the mynt
+@property (nonatomic, assign, readonly) BOOL isAlarm;
 
-// Battery of the mynt
-@property (nonatomic, assign, readonly) NSInteger battery;
-// Control mode
-@property (nonatomic, assign, readonly) MYNTControlMode controlMode;
+// The running mode of the mynt
+@property (nonatomic, assign, readonly) BOOL isHIDMode;
 // Event of the click type
 @property (nonatomic, assign, readonly) MYNTClickValue click;
 // Event of the double click type
@@ -36,6 +40,8 @@
 @property (nonatomic, assign, readonly) MYNTClickValue hold;
 // Event of the click + long press type
 @property (nonatomic, assign, readonly) MYNTClickValue clickHold;
+
+# pragma mynt info
 // manufaturer of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *manufaturer;
 // Model of the mynt
@@ -50,11 +56,6 @@
 @property (nonatomic, strong, readonly, nullable) NSString *software;
 // MAC address of the mynt
 @property (nonatomic, strong, readonly, nullable) NSString *mac;
-
-// Flag to determine the mynt is discovering or not
-@property (nonatomic, assign) BOOL isDiscovering;
-
-@property (nonatomic, weak, nullable) id<STMyntDelegate> delegate;
 
 /**
  *  Connect mynt
@@ -71,38 +72,24 @@
  *
  *  @param alarm alarm or stop
  */
-- (void)toggleAlarm:(BOOL)alarm;
+- (void)toggleAlarm:(BOOL)alarm
+            handler:(void(^ _Nullable)(NSError * _Nullable error))handler;
 
 /**
  *  Set how many times MYNT will alarm after the bluetooth connection broken
  *
  *  @param count alarm times
  */
-- (void)writeAlarmCount:(NSInteger)count;
+- (void)writeAlarmCount:(NSInteger)count
+                handler:(void(^ _Nullable)(NSError * _Nullable error))handler;
 
 /**
  *  Set how long the alarm will be delayed after the bluetooth connection broken
  *
  *  @param seconds delay time(units: second)
  */
-- (void)writeAlarmDelay:(NSInteger)seconds;
-
-/**
- *  Set the control mode of the mynt
- *
- *  @param mode control mode
- */
-- (void)writeControlMode:(MYNTControlMode)mode;
-
-/**
- *  Set the custom click type of the mynt
- *
- *  @param clickEvent  click event
- *  @param eventValue  event value
- */
-- (void)writeClickValue:(MYNTClickEvent)clickEvent
-            eventValue:(MYNTClickValue)eventValue;
-
+- (void)writeAlarmDelay:(NSInteger)seconds
+                handler:(void(^ _Nullable)(NSError * _Nullable error))handler;
 
 /**
  *  Set the custom click types of the mynt
@@ -113,50 +100,40 @@
  *  @param hold        long press
  *  @param clickHold   click + long press
  */
-- (void)writeClickValue:(MYNTClickValue)click
-           doubleClick:(MYNTClickValue)doubleClick
-           tripleClick:(MYNTClickValue)tripleClick
-                  hold:(MYNTClickValue)hold
-             clickHold:(MYNTClickValue)clickHold;
+- (void)writeClickValue:(BOOL)isHIDMode
+                  click:(MYNTClickValue)click
+            doubleClick:(MYNTClickValue)doubleClick
+            tripleClick:(MYNTClickValue)tripleClick
+                   hold:(MYNTClickValue)hold
+              clickHold:(MYNTClickValue)clickHold
+                handler:(void(^ _Nullable)(NSError * _Nullable error))handler;
 
 /**
  *  Read the battery state of the mynt
  *
- *  @param battery
+ *  @param success
+ *  @param failure
  */
-- (void)readBattery:(void (^ _Nullable)(NSInteger battery))battery;
+- (void)readBattery:(void (^ _Nullable)(NSArray<NSNumber *> * _Nonnull batteries))success
+            failure:(void(^ _Nullable)(NSError * _Nullable error))failure;
 
 /**
  *  Read the rssi of the mynt
  */
-- (void)readRSSI;
-
-/**
- *  Read the deviceInfo of the mynt
- *
- *  @param type    info type
- *  @param handler
- */
-- (void)readMyntInfo:(MYNTInfoType)type
-             handler:(void(^ _Nullable)(NSString * _Nullable))handler;
-
-/**
- *  Read the controlMode of the mynt
- *
- *  @param handler
- */
-- (void)readControlMode:(void(^ _Nullable)(MYNTControlMode mode))handler;
+- (void)readRSSI:(void(^ _Nullable)(NSError * _Nullable error))handler;
 
 /**
  *  Read the custom click types of the mynt
  *
- *  @param handler
+ *  @param success
+ *  @param failure
  */
 - (void)readClickValue:(void(^ _Nullable)(MYNTClickValue click,
                                           MYNTClickValue doubleClick,
                                           MYNTClickValue tripleClick,
                                           MYNTClickValue hold,
-                                          MYNTClickValue clickHold))handler;
+                                          MYNTClickValue clickHold))success
+               failure:(void(^ _Nullable)(NSError * _Nullable error))failure;
 
 /**
  *  Update the firmware of the mynt
@@ -166,6 +143,84 @@
 - (void)updateFirmware:(NSData * _Nullable (^ _Nullable)())start
               progress:(void (^ _Nullable)(CGFloat))progress
                success:(void (^ _Nullable)())success
-               failure:(void (^ _Nullable)(MYNTOADError))failure;
+               failure:(void (^ _Nullable)(NSError * _Nullable error))failure;
+
+/**
+ *  Set the ringtone data of the mynt
+ *
+ *  @param  data
+ *  @param  version
+ *  @param  handler
+ *
+ **/
+- (void)writeRingtone:(NSData * _Nonnull)data
+              version:(int)version
+              handler:(void(^ _Nullable)(NSError * _Nullable error))handler;
+
+/**
+ *  Read the version of the ringtone in mynt
+ *
+ *  @param  handler
+ *
+ **/
+- (void)readRingtoneVersion:(void (^ _Nullable)(NSInteger version, NSError * _Nullable error))handler;
+
+@end
+
+// MARK: - GPS
+@interface STMynt (MYNT_GPS)
+
+/**
+ * Synchronised time (for GPS)
+ *
+ * @param complete
+ */
+- (void)syncTime:(void (^ _Nullable)(NSError * _Nullable))handler;
+
+/**
+ * Turn off the mynt (for GPS)
+ *
+ * @param complete
+ */
+- (void)shutdown:(void (^ _Nullable)(NSError * _Nullable error))handler;
+
+/**
+ * Set the apn of the mynt (for GPS)
+ *
+ * @param apn
+ * @param handler
+ */
+- (void)writeAPN:(NSString * _Nonnull)apn
+         handler:(void (^ _Nullable)(NSError * _Nullable error))handler;
+
+/**
+ * Set the locate interval of the mynt (for GPS)
+ *
+ * @param minute
+ * @param handler
+ */
+- (void)writeLocateInterval:(NSInteger)minute
+                    handler:(void (^ _Nullable)(NSError * _Nullable error))handler;
+
+/**
+ * Read the locate interval of the mynt (for GPS)
+ *
+ * @param handler
+ */
+- (void)readLocateInterval:(void (^ _Nullable)(NSInteger interval, NSError * _Nullable error))handler;
+
+/**
+ * Read the iccid of the sim card
+ *
+ * @param handler (for GPS)
+ */
+- (void)readICCID:(void (^ _Nullable)(NSString * _Nullable iccic, NSError * _Nullable error))handler;
+
+/**
+ * Check the state of the sim card
+ *
+ * @param handler (for GPS)
+ */
+- (void)checkNetwork:(void (^ _Nullable)(NSError * _Nullable))handler;
 
 @end

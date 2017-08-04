@@ -1,1 +1,1 @@
-../../../MYNT-SDK-IOS/MYNT-SDK-IOS/STMyntBluetooth.h
+../../../../../../MYNT-SDK-IOS/STMyntBluetooth.h

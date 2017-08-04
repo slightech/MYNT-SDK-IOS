@@ -4,5 +4,9 @@
 #end
 target 'mynt-ios-demo' do
     platform :ios, '7.0'
-    pod 'MYNT-SDK-IOS'
+
+    pod 'MYNT-SDK-IOS', :path=>"../../"
+
+    pod 'CRToast'
+
 end

@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "MYNT-SDK-IOS"
-  s.version      = "1.4.0"
+  s.version      = "3.0.0"
   s.summary      = "Slightech's Mynt BLE SDK for iOS & OSX"
   s.homepage     = 'https://github.com/slightech/MYNT-SDK-IOS'
   s.author       = { 'robinge' => 'robinge@slightech.com' }
-  s.license      = { :type => 'Copyright', :text => 'LICENSE Copyright 2014 - 2016 Slightech.com, Inc. All rights reserved.' }
+  s.license      = { :type => 'Copyright', :text => 'LICENSE Copyright 2014 - 2017 Slightech.com, Inc. All rights reserved.' }
   s.source       = { :git => 'https://github.com/slightech/MYNT-SDK-IOS.git', :tag => "#{s.version}"}
 
   s.ios.deployment_target = '7.0'

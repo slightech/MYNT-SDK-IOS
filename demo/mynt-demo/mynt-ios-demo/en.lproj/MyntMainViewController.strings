@@ -1,0 +1,66 @@
+
+/* Class = "UIButton"; normalTitle = "写入APN"; ObjectID = "1hp-nS-002"; */
+"1hp-nS-002.normalTitle" = "Write APN values";
+
+/* Class = "UIButton"; normalTitle = "写入报警次数"; ObjectID = "EuH-gr-j0h"; */
+"EuH-gr-j0h.normalTitle" = "Write values of alsrm times";
+
+/* Class = "UIButton"; normalTitle = "切换为BLE"; ObjectID = "I00-BR-8ba"; */
+"I00-BR-8ba.normalTitle" = "Switch to BLE mode";
+
+/* Class = "UIButton"; normalTitle = "写入铃声"; ObjectID = "KSA-j5-dvY"; */
+"KSA-j5-dvY.normalTitle" = "Write values of ringtone";
+
+/* Class = "UIButton"; normalTitle = "读取电量"; ObjectID = "Kzx-ex-Puz"; */
+"Kzx-ex-Puz.normalTitle" = "Read value of battery quantity";
+
+/* Class = "UIButton"; normalTitle = "写入报警延迟"; ObjectID = "L7S-DJ-aBW"; */
+"L7S-DJ-aBW.normalTitle" = "Write values of how long will the alarm will be delayed when BT disconnected";
+
+/* Class = "UIButton"; normalTitle = "报警"; ObjectID = "L9O-RW-VaB"; */
+"L9O-RW-VaB.normalTitle" = "Alarm";
+
+/* Class = "UIButton"; normalTitle = "读取定位间隔"; ObjectID = "VpN-gs-1kk"; */
+"VpN-gs-1kk.normalTitle" = "Read the interval values of prositioning";
+
+/* Class = "UIButton"; normalTitle = "检测网络"; ObjectID = "Xvk-yx-mon"; */
+"Xvk-yx-mon.normalTitle" = "Detect network";
+
+/* Class = "UIButton"; normalTitle = "读取控制"; ObjectID = "aNe-Sy-tcy"; */
+"aNe-Sy-tcy.normalTitle" = "Read control event(Click, Double Click etc.)";
+
+/* Class = "UIButton"; normalTitle = "写入绑定密钥"; ObjectID = "bRA-Hk-DcL"; */\
+"bRA-Hk-DcL.normalTitle" = "Write bund key which used to verify whether the current connection is initiated by owner";
+
+/* Class = "UILabel"; text = "GPS"; ObjectID = "cgP-v9-amg"; */
+"cgP-v9-amg.text" = "GPS";
+
+/* Class = "UIButton"; normalTitle = "同步时间"; ObjectID = "eV4-H1-aA3"; */
+"eV4-H1-aA3.normalTitle" = "Sync Date";
+
+/* Class = "UIButton"; normalTitle = "读取铃声"; ObjectID = "gjG-zT-dW2"; */
+"gjG-zT-dW2.normalTitle" = "Read the ringtone values";
+
+/* Class = "UIButton"; normalTitle = "清空日志"; ObjectID = "iV4-ZQ-ilm"; */
+"iV4-ZQ-ilm.normalTitle" = "Clear the log";
+
+/* Class = "UIButton"; normalTitle = "写入控制"; ObjectID = "j13-8E-RQQ"; */
+"j13-8E-RQQ.normalTitle" = "Write control event (Click, Double Click etc.)";
+
+/* Class = "UIButton"; normalTitle = "读取ICCID"; ObjectID = "jCJ-lf-Pao"; */
+"jCJ-lf-Pao.normalTitle" = "Read ICCID values";
+
+/* Class = "UIButton"; normalTitle = "写入定位间隔"; ObjectID = "mrm-V9-sXn"; */
+"mrm-V9-sXn.normalTitle" = "Write the interval value of prositioning";
+
+/* Class = "UIButton"; normalTitle = "关机"; ObjectID = "pIi-Z4-mxg"; */
+"pIi-Z4-mxg.normalTitle" = "Power off";
+
+/* Class = "UIButton"; normalTitle = "检测绑定密钥"; ObjectID = "q2y-Jn-PSK"; */
+"q2y-Jn-PSK.normalTitle" = "Detect the bund key";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rwT-nl-JCj"; */
+"rwT-nl-JCj.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "更新固件"; ObjectID = "vw8-48-6jT"; */
+"vw8-48-6jT.normalTitle" = "Update firmware";

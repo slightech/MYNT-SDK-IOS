@@ -1,1 +1,1 @@
-../../../MYNT-SDK-IOS/MYNT-SDK-IOS/STConstants.h
+../../../../../../MYNT-SDK-IOS/STConstants.h

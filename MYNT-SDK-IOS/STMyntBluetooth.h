@@ -11,15 +11,29 @@
 
 @interface STMyntBluetooth : NSObject
 // Flag to determine if the manager is scanning
-@property (nonatomic, assign) BOOL isScanning;
-// Help others find the mynt
-@property (nonatomic, assign) BOOL reportLost;
+@property (nonatomic, assign, readonly) BOOL isScanning;
 // The current state of the bluetooth
-@property (nonatomic, assign) CBCentralManagerState centralState;
+@property (nonatomic, assign, readonly) CBCentralManagerState centralState;
+// Help others find the mynt
+@property (nonatomic, assign) BOOL isReportUnknownMynt;
 // Delegate
 @property (nonatomic, weak, nullable) id<STMyntBluetoothDelegate> delegate;
 
 + (instancetype _Nonnull)sharedInstance;
+
+/**
+ *  Set the AppKey
+ *
+ *  @param appKey
+ */
+- (void)setMyntAppKey:(NSString * _Nonnull)appKey;
+
+/**
+ *  The params will upload when uploading the found devices
+ *
+ *  @param params Customize parameters
+ */
+- (void)setCustomParams:(NSString * _Nullable)params;
 
 /**
  *  Start scanning for mynts.
@@ -32,13 +46,6 @@
  *  Stop scanning for mynts.
  */
 - (void)stopScan;
-
-/**
- *  Retrieves all mynts that are connected to the system (not only in app)
- *
- *  @return
- */
-- (NSArray <STMynt *> * _Nullable)retrieveConnectedMynts;
 
 /**
  *  get the mynt with sn

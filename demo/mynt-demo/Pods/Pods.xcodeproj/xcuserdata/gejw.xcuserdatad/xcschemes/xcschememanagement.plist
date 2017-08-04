@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CRToast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-mynt-ios-demo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C4B3B4CE0DD341832C7B8113CDB451F3</key>
+		<key>47CF347476C0B0C692B3C622221B3E04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF44C83DC805A0B8A875203B49D73706</key>
 		<dict>
 			<key>primary</key>
 			<true/>

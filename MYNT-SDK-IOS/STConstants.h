@@ -14,6 +14,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #else
 #import <IOBluetooth/IOBluetooth.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 #endif
 
 #define mynt_deprecated __attribute__((deprecated("deprecated and will be removed in the feture")))
@@ -31,16 +32,12 @@ typedef NS_ENUM(NSInteger, MYNTClickValue) {
     MYNTClickValuePPTNextPage = 0x06,
     MYNTClickValuePPTPreviousPage = 0x07,
     MYNTClickValuePPTExit = 0x08,
+    
     // if you set the values below, [mynt:didReceiveClickEvent:] will be invoked when you click mynt
-    MYNTClickValueCustomClick = 0xB0
-};
-
-typedef NS_ENUM(NSInteger, MYNTControlMode) {
-    MYNTControlModeMusic = 0x01,
-    MYNTControlModeCamera = 0x02,
-    MYNTControlModePPT = 0x03,
-    MYNTControlModeCustom = 0x04,
-    MYNTControlModeDefault = 0x05,
+    MYNTClickValuePhoneFlash    = 0xA0,
+    MYNTClickValuePhoneAlarm    = 0xA1,
+    MYNTClickValueAskHelp       = 0xA3,
+    MYNTClickValueCustomClick   = 0xB0
 };
 
 typedef NS_ENUM(NSInteger, MYNTClickEvent) {
@@ -48,7 +45,10 @@ typedef NS_ENUM(NSInteger, MYNTClickEvent) {
     MYNTClickEventDoubleClick = 0x02,
     MYNTClickEventTripleClick = 0x03,
     MYNTClickEventHold = 0x09,
-    MYNTClickEventClickHold
+    MYNTClickEventClickHold = 0x10,
+    MYNTClickEventPhoneFlash = 0xA0,
+    MYNTClickEventPhoneAlarm = 0xA1,
+    MYNTClickEventPhoneAlarmOff = 0xA2
 };
 
 typedef NS_ENUM(NSInteger, MYNTInfoType) {
@@ -61,21 +61,10 @@ typedef NS_ENUM(NSInteger, MYNTInfoType) {
 };
 
 typedef NS_ENUM(NSInteger, MYNTHardwareType) {
-    MYNTHardwareTypeCC25XX = 0x00,
-    MYNTHardwareTypeCC26XX = 0x01,
-    MYNTHardwareTypeCC26GPS = 0x02
-};
-
-typedef NS_ENUM(NSInteger, MYNTFirmwareType) {
-    MYNTFirmwareTypeBLE = 0x00,
-    MYNTFirmwareTypeHID = 0x01
-};
-
-typedef NS_ENUM(NSInteger, MYNTOADError) {
-    MYNTOADErrorFileError = 0x00,
-    MYNTOADErrorConnectionSetError,
-    MYNTOADErrorBlockWriteError,
-    MYNTOADErrorDisconnected
+    MYNTHardwareTypeNone       = 0xFF,
+    MYNTHardwareTypeMYNTV1     = 0x00,
+    MYNTHardwareTypeMYNTV2     = 0x01,
+    MYNTHardwareTypeMYNTGPS    = 0x02
 };
 
 typedef NS_ENUM(NSInteger, MYNTState) {
@@ -84,7 +73,6 @@ typedef NS_ENUM(NSInteger, MYNTState) {
     MYNTStateConnecting,
     MYNTStateConnected,
 };
-
 
 #endif /* STConstants_h */
 
@@ -120,16 +108,6 @@ typedef NS_ENUM(NSInteger, MYNTState) {
 - (void)myntBluetooth:(STMyntBluetooth * _Nonnull)myntBluetooth didDiscoverTimeoutMynt:(STMynt * _Nonnull)mynt;
 
 /**
- *  Invoked if you need filter the mynts.
- *
- *  @param myntBluetooth
- *  @param sn            the sn of the mynt when the mynt is discoverd.
- *
- *  @return if this mynt need filter(don't ues it), so you can need true.
- */
-- (BOOL)myntBluetooth:(STMyntBluetooth * _Nonnull)myntBluetooth didFilterMyntWithSn:(NSString * _Nonnull)sn;
-
-/**
  *  Invoked if sdk print log.
  *
  *  @param myntBluetooth
@@ -142,6 +120,7 @@ typedef NS_ENUM(NSInteger, MYNTState) {
 @end
 
 // MARK: =======================STMyntDelegate=======================
+
 @protocol STMyntDelegate <NSObject>
 
 @optional
@@ -159,14 +138,6 @@ typedef NS_ENUM(NSInteger, MYNTState) {
  *  @param mynt
  */
 - (void)myntDidConnected:(STMynt * _Nonnull)mynt;
-
-/**
- *  Invoked when a connection initiated has failed to complete
- *
- *  @param mynt
- *  @param error
- */
-- (void)mynt:(STMynt * _Nonnull)mynt didConnectFailed:(NSError * _Nullable)error;
 
 /**
  *  Invoked when a connection has been disconnected
@@ -190,7 +161,7 @@ typedef NS_ENUM(NSInteger, MYNTState) {
  *  @param mynt
  *  @param battery the battery of the mynt
  */
-- (void)mynt:(STMynt * _Nonnull)mynt didUpdateBattery:(NSInteger)battery;
+- (void)mynt:(STMynt * _Nonnull)mynt didUpdateBattery:(NSArray <NSNumber *> * _Nonnull)batteries;
 
 /**
  *  Invoked when the alarm state of the mynt has been updated.
@@ -198,7 +169,7 @@ typedef NS_ENUM(NSInteger, MYNTState) {
  *  @param mynt
  *  @param alarmState the alarm state of the mynt
  */
-- (void)mynt:(STMynt * _Nonnull)mynt didUpdateAlarmState:(BOOL)alarmState;
+- (void)mynt:(STMynt * _Nonnull)mynt didUpdateAlarmState:(BOOL)isAlarm;
 
 /**
  *  Invoked when the mynt is clicked
@@ -225,3 +196,4 @@ typedef NS_ENUM(NSInteger, MYNTState) {
 - (void)didNeedRestartBluetooth:(STMynt * _Nonnull)mynt;
 
 @end
+
